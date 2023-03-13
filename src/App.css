@@ -1,0 +1,16 @@
+body{
+    color: black;
+    text-align: center;
+
+}
+.container{
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+}
+.movie-cover{
+    width: 100%;
+}
