@@ -1,16 +1,81 @@
-body{
-    color: black;
-    text-align: center;
+body {
+	background-color: #090a0e;
+	color: white;
+}
+.container {
+	background-color: #0f1014;
+	padding: 25px;
+	display: grid;
+	gap: 15px;
+	text-align: center;
+	grid-template-columns: repeat(4, 1fr);
+}
+.movie-cover {
+	width: 100%;
+	text-align: center;
+	height: 358px;
+}
 
+.header-content {
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	align-items: center;
 }
-.container{
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    display: grid;
-    gap: 15px;
-    grid-template-columns: repeat(4, 1fr);
+.max-center {
+	max-width: 1000px;
+	margin: auto;
 }
-.movie-cover{
-    width: 100%;
+.movie-placeholder {
+	background-color: #fff;
+	color: rgb(70, 68, 68);
+	min-height: 358px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.icons {
+	font-size: 50px;
+}
+.hero {
+	min-height: 600px;
+	margin: auto;
+    position: relative;
+	max-width: 1050px;
+	background-position: center top;
+	background-size: cover;
+	display: flex;
+	align-items: flex-end;
+}
+.hero h1 {
+	font-size: 64px;
+	margin: 0;
+}
+.button {
+	background-color: #0f1014;
+	color: white;
+	border: 1px solid white;
+	padding: 13px 35px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+.hero-content {
+	margin: 0 10rem;
+	max-width: 70%;
+	padding-bottom: 100px;
+}
+
+.youtube_container{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}   
+.button__close{
+    position: absolute;
+    z-index: 10;
+    bottom: 30px;
+    left: 30px;
 }
