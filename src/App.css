@@ -41,7 +41,7 @@ body {
 .hero {
 	min-height: 600px;
 	margin: auto;
-    position: relative;
+	position: relative;
 	max-width: 1050px;
 	background-position: center top;
 	background-size: cover;
@@ -53,12 +53,24 @@ body {
 	margin: 0;
 }
 .button {
-	background-color: #0f1014;
+	background: linear-gradient(
+		to right,
+		rgb(255, 0, 179) 0%,
+		rgb(66, 0, 128) 100%
+	);
 	color: white;
-	border: 1px solid white;
+	border: none;
+	width: 200px;
 	padding: 13px 35px;
 	border-radius: 10px;
 	cursor: pointer;
+	font-size: 1rem;
+	font-family: cursive;
+	box-shadow: 2px 2px 10px purple;
+    transition: 0.1s;
+}
+.button:active {
+	transform: translateY(1px);
 }
 .hero-content {
 	margin: 0 10rem;
@@ -66,16 +78,75 @@ body {
 	padding-bottom: 100px;
 }
 
-.youtube_container{
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-}   
-.button__close{
-    position: absolute;
-    z-index: 10;
-    bottom: 30px;
-    left: 30px;
+.youtube_container {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+}
+.button__close {
+	position: absolute;
+	z-index: 10;
+	bottom: 30px;
+	background: linear-gradient(
+		to right,
+		rgb(255, 0, 179) 0%,
+		rgb(66, 0, 128) 100%
+	);
+
+	left: 30px;
+	color: white;
+	border: none;
+	padding: 13px 35px;
+	border-radius: 10px;
+	cursor: pointer;
+	font-family: cursive;
+}
+.header-content input {
+	padding: 12px 20px;
+	width: 250px;
+	font-size: 12px;
+	background-color: #333;
+	border: 1px solid rgb(63, 63, 63);
+	outline: none;
+	color: white;
+	border-radius: 5px;
+	margin-right: 5px;
+    font-size: 1.1rem;
+    font-family: cursive;
+}
+.header-content input:focus {
+	outline: 1px solid gray;
+}
+.header-content button {
+	padding: 14px;
+	width: 100px;
+	color: white;
+	font-size: 12px;
+	background: linear-gradient(
+		to right,
+		rgb(255, 0, 179) 0%,
+		rgb(66, 0, 128) 100%
+	);
+	border: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 5px;
+	font-family: cursive;
+	transition: 0.1s;
+	box-shadow: 0px 0px 20px purple;
+}
+
+.header-content button:active {
+	transform: translateY(1px);
+}
+.header-content h1 {
+	font-size: 35px;
+	letter-spacing: 2px;
+	font-family: cursive;
+}
+.header-content h1 > span {
+	color: purple;
+	text-shadow: 5px 5px 10px purple;
 }

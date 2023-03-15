@@ -108,7 +108,7 @@ const App = () => {
 
 
 				<div className="header-content max-center">
-					<h1>FlickFlair</h1>
+					<h1>Flick<span>Flair</span></h1>
 
 					<form onSubmit={searchMovies}>
 
@@ -130,7 +130,7 @@ const App = () => {
 
 
 				<div className="hero-content max-center">
-          {playTrailer ?  <button className="button button__close" onClick={()=>{ setPlayTrailer(false)}}>Close</button>: null }
+          {playTrailer ?  <button className="button__close" onClick={()=>{ setPlayTrailer(false)}}>Close</button>: null }
 
           {selectedMovie.videos && playTrailer == true ? renderTrailer() : null }
 
