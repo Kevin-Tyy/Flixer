@@ -52,7 +52,7 @@ body {
 	min-height: 600px;
 	margin: 20px auto 0;
 	position: relative;
-	max-width: 1000px;
+	max-width: 1100px;
 	background-position: center top;
 	background-size: cover;
 	display: flex;
@@ -170,6 +170,9 @@ body {
 .image-container{
 	overflow-x: hidden;
 	overflow-y: hidden;
+}
+.movie-card{
+	margin: 10px;
 }
 .movie-card img {
 	transition: 0.5s;

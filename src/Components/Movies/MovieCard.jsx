@@ -25,7 +25,7 @@ const MovieCard = ({ movie, selectedMovie }) => {
 				)}
 			</div>
 
-			<h3 className="movie-title">{movie.title}</h3>
+			<h5 className="movie-title">{movie.title}</h5>
 		</div>
 	);
 };
