@@ -1,0 +1,115 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.container{
+
+  width: 75% ;
+  margin: 0 auto;
+}
+.carousel-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.carousel-center img {
+	width: 100%;
+	max-width: 1400px;
+	max-height: 600px;
+	object-fit: cover;
+}
+
+.carousel-center .icons {
+	font-size: 100px;
+	color: #f4c10f;
+	position: absolute;
+	top: 40%;
+	cursor: pointer;
+}
+.control-btn button {
+	background: none;
+	font-size: 40px;
+	border: none;
+	cursor: pointer;
+}
+.control-btn .icons {
+	color: white;
+}
+.control-btn .next {
+	position: absolute;
+	top: 45%;
+	right:5%;
+	z-index: 99;
+}
+
+.carousel-caption {
+	position: relative;
+	bottom: 60px;
+}
+.control-btn .prev {
+	position: absolute;
+	top: 45%;
+	left: 5%;
+	z-index: 99;
+}
+.genre_list li {
+	list-style-type: none;
+}
+.genre_list{
+  display: flex;
+  flex-direction: row ;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.genre_list li>button{
+  background-color: transparent;
+  border: 2px solid #5a606b;
+  color: #5a606b;
+  margin: 7px 5px  ;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+}
+.genre_list button:hover{
+  border: 2px solid white;
+  color: white;
+}
+.row{
+  width: 100%;
+}
+.card{
+	margin: 20px;
+}
+
+.card img{
+	width: 100%;
+}
+.container-movie {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+.actors-list{
+	margin: 30px ;
+	display: flex;
+	grid-template-columns: repeat(4, 1fr);
+}
+.container-actors h2{
+	text-transform: uppercase;
+	margin: 20px;
+}
+.actors-card{
+	width: 100%;
+}
+.actors-card img{
+	max-width: 250px;
+	width: 90%;
+	height: 65%;
+	border-radius: 50%;
+	object-fit: cover;
+}
+.actors-card p{
+	text-align: center;
+	margin-top:20px;
+	text-transform: capitalize;
+}

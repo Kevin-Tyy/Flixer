@@ -1,0 +1,27 @@
+
+.sidebar{
+    background-color: #080808;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    width: 300px;
+    border-right: 1px solid rgb(36, 36, 36);
+}
+.sidebar a{
+    color: grey;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 20px 20px 20px 0;
+    transition: 0.2s;
+}
+.sidebar a:hover{
+    border-left: 3px solid purple;
+    color: white;
+}
+/* .sidebar a.active{
+    border-left: 3px solid purple;
+    color: white;   
+} */
