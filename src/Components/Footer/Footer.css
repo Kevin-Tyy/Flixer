@@ -1,0 +1,45 @@
+footer{
+    border-top: 1px solid rgb(34, 34, 34);
+    width: 82%;
+    margin: 50px 30px 0 auto;
+    padding: 30px;   
+}
+.footer-flex{
+    display: flex;
+    justify-content: space-around;
+
+}
+.footer-flex .about{
+    width: 60%;
+}
+.footer-flex  p{
+    line-height: 40px;
+    color: grey;
+}
+.footer-flex h2{
+    color: grey;
+}
+.footer-flex span{
+    font-weight: 700;
+}
+.social-icons{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+.social-icons .icons{
+    font-size: 25px;
+    margin: 0 10px;
+    padding: 7px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.social-icons .icons:hover{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    scale: 1.1
+}
+.social-icons .icons:active{
+    scale: 0.9;
+}

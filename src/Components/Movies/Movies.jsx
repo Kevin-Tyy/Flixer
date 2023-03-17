@@ -79,15 +79,9 @@ const Movies = () => {
 
 	const renderTrailer = () => {
 		if (selectedMovie.videos.results.length !== 0) {
-			const trailer = selectedMovie.videos.results.find(
-				(video) =>
-					video.name === "Official Trailer" ||
-					video.name === "Official Trailer 1" ||
-					video.name === "official trailer" ||
-					video.name === "Official Trailer 2" ||
-					video.name === "Official Teaser Trailer" ||
-					video.name === "Teaser Trailer"
-			);
+
+			const trailerArray = selectedMovie.videos.results.filter(video => video.name.includes("Trailer") || video.name.includes("trailer") || video.name.includes("Teaser"));
+			const trailer = trailerArray[0];
 			const key = trailer
 				? trailer.key
 				: selectedMovie.videos.results[0].key;

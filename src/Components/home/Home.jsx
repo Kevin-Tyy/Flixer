@@ -166,7 +166,7 @@ const Home = () => {
 		prevArrow: <CustomPrev />,
 	};
 	return (
-		<div className="container">
+		<div className="container-grid">
 
 			<div className="row">
 				<div className="movie-slider">

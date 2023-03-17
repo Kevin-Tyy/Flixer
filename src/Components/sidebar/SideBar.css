@@ -6,22 +6,30 @@
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 60px;
+    top: 78px;
     width: 300px;
     border-right: 1px solid rgb(36, 36, 36);
 }
 .sidebar a{
-    color: grey;
+    color: rgb(68, 68, 68);
     text-decoration: none;
-    padding: 10px 20px;
-    margin: 20px 20px 20px 0;
+    padding: 15px 20px;
+    margin: 10px 15px  ;
+    border-radius: 14px;
     transition: 0.2s;
+    font-weight: 700;
 }
 .sidebar a:hover{
-    border-left: 3px solid purple;
     color: white;
+    background-color: rgb(27, 27, 27);
 }
-/* .sidebar a.active{
-    border-left: 3px solid purple;
+.sidebar .icons{
+    font-size: 13px;
+}
+.sidebar a.active{
+    background-color: rgb(27, 27, 27);
     color: white;   
-} */
+}
+.sidebar a.active .icons{
+    color: purple;
+}

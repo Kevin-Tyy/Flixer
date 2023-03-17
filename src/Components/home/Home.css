@@ -2,9 +2,9 @@
 	margin: 0;
 	padding: 0;
 }
-.container{
+.container-grid{
 
-  width: 75% ;
+  width: 60% ;
   margin: 0 auto;
 }
 .carousel-center {
@@ -100,13 +100,20 @@
 }
 .actors-card{
 	width: 100%;
+	background-color: rgb(0, 0, 0, 0.5);
+	padding: 40px 40px 0 40px;
+	margin: 10px;
+	border-radius: 30px;
 }
 .actors-card img{
-	max-width: 250px;
+	max-width: 200px;
 	width: 90%;
-	height: 65%;
+	height: 55%;
+	max-height: 300px;
 	border-radius: 50%;
 	object-fit: cover;
+	border: 2px solid grey	;
+	padding: 10px;
 }
 .actors-card p{
 	text-align: center;
