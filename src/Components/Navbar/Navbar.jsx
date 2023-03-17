@@ -14,10 +14,10 @@ const Navbar = () => {
 				</Link>
 			</div>
 			<div>
+				<NavLink to="/" className="link">Home</NavLink>
 				<NavLink to="/movies" className="link">Movies</NavLink>
 				<NavLink to="/shows" className="link">TV Shows</NavLink>
 				<NavLink to="/series" className="link">Series</NavLink>
-				<NavLink to="/watch" className="link">Watch</NavLink>
 			</div>
       <div>
         <FontAwesomeIcon icon={faBell} className="icons"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

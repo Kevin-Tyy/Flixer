@@ -18,6 +18,7 @@ import {
 import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
 
 import ReactStars from "react-rating-stars-component";
+import { Link } from "react-router-dom";
 
 const Home = () => {
 	const [nowPlaying, setNowPlaying] = useState([]);
@@ -38,9 +39,9 @@ const Home = () => {
 		fetchAPI();
 	}, []);
 
-  const handleGenreClick=  async(genre_id) =>{
-    setMovieByGenre(await fetchMovieByGenre(genre_id))
-  }
+	const handleGenreClick = async (genre_id) => {
+		setMovieByGenre(await fetchMovieByGenre(genre_id));
+	};
 
 	const movies = nowPlaying.slice(0, 5).map((item, index) => {
 		return (
@@ -49,10 +50,12 @@ const Home = () => {
 					<img src={item.backPoster} alt={item.title} />
 				</div>
 				<div className="carousel-center">
-					<FontAwesomeIcon
-						icon={faPlayCircle}
-						className="icons"
-					/>
+					<Link to="/movies">
+						<FontAwesomeIcon
+							icon={faPlayCircle}
+							className="icons"
+						/>
+					</Link>
 				</div>
 				<div
 					className="carousel-caption"
@@ -66,9 +69,13 @@ const Home = () => {
 	const genreList = genres.map((item, index) => {
 		return (
 			<li key={index}>
-				<button type="button" onClick={()=>{
-          handleGenreClick(item.id)
-        }}>{item.name}</button>
+				<button
+					type="button"
+					onClick={() => {
+						handleGenreClick(item.id);
+					}}>
+					{item.name}
+				</button>
 			</li>
 		);
 	});
@@ -77,11 +84,9 @@ const Home = () => {
 		return (
 			<div key={index} className="card">
 				<div>
-
-						<div className="img-container">
-							<img src={item.poster} alt={item.title} />
-						</div>
-
+					<div className="img-container">
+						<img src={item.poster} alt={item.title} />
+					</div>
 				</div>
 				<div>
 					<p style={{ fontWeight: "bolder" }}>{item.title}</p>
@@ -109,11 +114,9 @@ const Home = () => {
 		return (
 			<div className="card" key={index}>
 				<div>
-	
-						<div className="img-container">
-							<img src={movie.poster} alt={movie.title} />
-						</div>
-					
+					<div className="img-container">
+						<img src={movie.poster} alt={movie.title} />
+					</div>
 				</div>
 				<div>
 					<p style={{ fontWeight: "bolder" }}>{movie.title}</p>
@@ -167,7 +170,6 @@ const Home = () => {
 	};
 	return (
 		<div className="container-grid">
-
 			<div className="row">
 				<div className="movie-slider">
 					<Slider {...settings}>{movies}</Slider>
@@ -186,9 +188,9 @@ const Home = () => {
 				<div className="actors-list">{trendingActors}</div>
 			</div>
 			<div className="toprated">
-        <h2>Top Rated Movies this Week</h2>
-      </div>
-      <div className=" container-movie">{topRatedMovies}</div>
+				<h2>Top Rated Movies this Week</h2>
+			</div>
+			<div className=" container-movie">{topRatedMovies}</div>
 		</div>
 	);
 };

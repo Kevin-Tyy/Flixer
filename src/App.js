@@ -18,7 +18,9 @@ import Community from "./Components/Pages/Community";
 import Downloads from "./Components/Pages/Downloads";
 import WatchList from "./Components/Pages/WatchList";
 import SideBar from "./Components/Sidebar/SideBar";
-
+import Shows from "./Components/Pages/Shows"
+import Series from "./Components/Pages/Series"
+import Page404 from "./Components/Pages/404";
 const App = () => {
 	return (
 		<>
@@ -29,8 +31,11 @@ const App = () => {
 				<Route path="/bookmarks" element={<Bookmarks />} />
 				<Route path="/downloads" element={<Downloads />} />
 				<Route path="/Community" element={<Community />} />
-				<Route path="/Coming" element={<Coming	 />} />
+				<Route path="/comingsoon" element={<Coming/>} />
 				<Route path="/browse" element={<Navigate to="/movies" /> }/>
+				<Route path="/shows" element={<Shows />} />
+				<Route path="/series" element={< Series/>} />
+				<Route path="*" element={<Page404/>} />
 				
 			</Routes>
 			<main>
