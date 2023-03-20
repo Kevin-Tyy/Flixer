@@ -117,7 +117,7 @@ body {
 }
 
 .header-content input {
-	padding: 10px 30px 12px 40px;
+	padding: 14px 30px 12px 40px;
 	width: 400px;
 	margin-right: -100px;
 	font-size: 12px;
@@ -125,7 +125,7 @@ body {
 	border: 1px solid rgb(63, 63, 63);
 	outline: none;
 	color: white;
-	border-radius: 17px;
+	border-radius: 15px;
     font-size: 1.1rem;
     font-family: cursive;
 }
@@ -166,7 +166,7 @@ body {
 .input-icon{
 	color: grey;
 	font-size: 15px;
-	transform: translate(28px, 3px);
+	transform: translate(28px, 0);
 }
 .image-container{
 	overflow-x: hidden;

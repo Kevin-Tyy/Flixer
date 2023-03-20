@@ -152,6 +152,8 @@ const Movies = () => {
 							onChange={(e) =>
 								setSearchKey(e.target.value)
 							}
+							placeholder ="search for movies"
+							style={{fontSize: "12px"}}
 						/>
 
 						<button type="submit">Search</button>
