@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import ReactStars from "react-rating-stars-component";
 import "./Pages.css";
 
 function TVSeries() {
@@ -21,8 +22,8 @@ function TVSeries() {
 	const posterUrl = "https://image.tmdb.org/t/p/original";
 
 	return (
-		<div>
-			<h1 style={{ textAlign: "center" }}>Famous TV Shows</h1>
+		<div className="pages">
+			<h1 style={{ textAlign: "center" }}>Famous TV Series</h1>
 			<div className="pages-container series">
 				{series.map((serie) => (
 					<div key={serie.id} className="movie-card">
@@ -33,8 +34,17 @@ function TVSeries() {
 						</div>
 
 						<h2>{serie.name}</h2>
-						<p>{serie.first_air_date}</p>
+						<p style={{lineHeight: 5}}><span style={{color: "purple"}}>First Release Date : </span>{serie.first_air_date}</p>
 						<p>{serie.overview}</p>
+						<span style={{color : "purple"}}>Rating</span>
+						<ReactStars
+							count={serie.rating}
+							size={20}
+							isHalf ={true}
+							activeColor="yellow"
+							color="grey"
+							
+						/>
 					</div>
 				))}
 			</div>

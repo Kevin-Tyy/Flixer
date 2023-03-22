@@ -7,13 +7,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faClose,
 	faFilm,
-	faPlay,
+	
 	faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 
-import {
-	fetchGenre
-} from "../../services/index";
+import { fetchGenre } from "../../services/index";
+import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
 const Movies = () => {
 	const [movies, setMovies] = useState([]);
 	const [searchKey, setSearchKey] = useState("");
@@ -43,8 +42,6 @@ const Movies = () => {
 	useEffect(() => {
 		const fetchAPI = async () => {
 			setGenres(await fetchGenre());
-			
-		
 		};
 
 		fetchAPI();
@@ -79,8 +76,13 @@ const Movies = () => {
 
 	const renderTrailer = () => {
 		if (selectedMovie.videos.results.length !== 0) {
-
-			const trailerArray = selectedMovie.videos.results.filter(video => video.name.includes("Trailer") || video.name.includes("trailer") || video.name.includes("Teaser"));
+			const trailerArray = selectedMovie.videos.results.filter(
+				(video) =>
+					video.name.includes("Official Trailer") ||
+					video.name.includes("Trailer") ||
+					video.name.includes("trailer") ||
+					video.name.includes("Teaser")
+			);
 			const trailer = trailerArray[0];
 			const key = trailer
 				? trailer.key
@@ -136,38 +138,39 @@ const Movies = () => {
 	return (
 		<div className="App">
 			<div className="margin"></div>
-			<header className="header">
-				<div className="header-content max-center">
-					<h1>
-						Flick<span>Flair</span>
-					</h1>
 
-					<form onSubmit={searchMovies}>
-						<FontAwesomeIcon
-							icon={faSearch}
-							className="input-icon"
-						/>
-						<input
-							type="text"
-							onChange={(e) =>
-								setSearchKey(e.target.value)
-							}
-							placeholder ="search for movies"
-							style={{fontSize: "12px"}}
-						/>
-
-						<button type="submit">Search</button>
-					</form>
-				</div>
-			</header>
 			{movies.length ? (
-				<main>
+				<main className="main">
+					<header className="header">
+						<div className="header-content">
+							<h1>
+								Flick<span>Flair</span>
+							</h1>
+
+							<form onSubmit={searchMovies}>
+								<FontAwesomeIcon
+									icon={faSearch}
+									className="input-icon"
+								/>
+								<input
+									type="text"
+									onChange={(e) =>
+										setSearchKey(e.target.value)
+									}
+									placeholder="search for movies"
+									style={{ fontSize: "12px" }}
+								/>
+
+								<button type="submit">Search</button>
+							</form>
+						</div>
+					</header>
 					<div
 						className="hero"
 						style={{
 							backgroundImage: `url("${IMAGE_PATH}${selectedMovie.backdrop_path} ")`,
 						}}>
-						<div className="hero-content max-center">
+						<div className="hero-content ">
 							{playTrailer ? (
 								<button
 									className="button__close"
@@ -182,16 +185,19 @@ const Movies = () => {
 								? renderTrailer()
 								: null}
 
-							<h1>{selectedMovie.title}</h1>
+							<div>
+								<h1>{selectedMovie.title}</h1>
 
-							{selectedMovie.overview ? (
-								<p> {selectedMovie.overview} </p>
-							) : null}
+								{selectedMovie.overview ? (
+									<p> {selectedMovie.overview} </p>
+								) : null}
+							</div>
+							
 
 							<button
 								className="button"
 								onClick={() => setPlayTrailer(true)}>
-								<FontAwesomeIcon icon={faPlay} /> &nbsp;
+								<FontAwesomeIcon icon={faPlayCircle} /> &nbsp;
 								Play Trailer
 							</button>
 						</div>
@@ -200,7 +206,7 @@ const Movies = () => {
 						<h3>Filter Movies by Genre</h3>
 						<ul className="genre_list">{genreList}</ul>
 					</div>
-					<div className="container max-center">
+					<div className="container">
 						{movies.map((movie) => (
 							<MovieCard
 								key={movie.id}

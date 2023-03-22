@@ -10,6 +10,7 @@ import {
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Home.css";
+import "../Movies/App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faChevronLeft,
@@ -80,7 +81,7 @@ const Home = () => {
 		);
 	});
 
-	const movieList = movieByGenre.slice(0, 4).map((item, index) => {
+	const movieList = movieByGenre.slice(0, 5).map((item, index) => {
 		return (
 			<div key={index} className="card">
 				<div>
@@ -94,13 +95,15 @@ const Home = () => {
 					<ReactStars
 						size={20}
 						count={item.rating}
-						color={"#f1c10f"}></ReactStars>
+						color={"#f1c10f"}
+						isHalf={true}>
+					</ReactStars>
 				</div>
 			</div>
 		);
 	});
 
-	const trendingActors = persons.slice(0, 4).map((person, index) => {
+	const trendingActors = persons.slice(0, 5).map((person, index) => {
 		return (
 			<div className="actors-card" key={index}>
 				<img src={person.profileImg} alt={person.name} />
@@ -110,7 +113,7 @@ const Home = () => {
 		);
 	});
 
-	const topRatedMovies = topRated.slice(0, 4).map((movie, index) => {
+	const topRatedMovies = topRated.slice(0, 5).map((movie, index) => {
 		return (
 			<div className="card" key={index}>
 				<div>
@@ -169,29 +172,33 @@ const Home = () => {
 		prevArrow: <CustomPrev />,
 	};
 	return (
-		<div className="container-grid">
-			<div className="row">
-				<div className="movie-slider">
-					<Slider {...settings}>{movies}</Slider>
+		<main className="main">
+			<div className="container-grid">
+				<div className="row">
+					<div className="movie-slider">
+						<Slider {...settings}>{movies}</Slider>
+					</div>
 				</div>
-			</div>
 
-			<div>
-				<ul className="genre_list">{genreList}</ul>
-			</div>
+				<div>
+					<ul className="genre_list">{genreList}</ul>
+				</div>
+				<h2 className="header-text">Trending Movies this week</h2>
 
-			<div className=" container-movie">{movieList}</div>
-			<div className="container-actors">
-				<h2 style={{ fontWeight: 700, color: "#5a606b" }}>
-					Trending Actors this Week
-				</h2>
-				<div className="actors-list">{trendingActors}</div>
+				<div className=" container-movie">
+					{movieList}</div>
+				<div className="container-actors">
+					<h2 style={{ fontWeight: 700, color: "#5a606b" }}>
+						Trending Actors this Week
+					</h2>
+					<div className="actors-list">{trendingActors}</div>
+				</div>
+				<div className="toprated">
+					<h2 className="header-text">Top Rated Movies this Week</h2>
+				</div>
+				<div className=" container-movie">{topRatedMovies}</div>
 			</div>
-			<div className="toprated">
-				<h2>Top Rated Movies this Week</h2>
-			</div>
-			<div className=" container-movie">{topRatedMovies}</div>
-		</div>
+		</main>
 	);
 };
 

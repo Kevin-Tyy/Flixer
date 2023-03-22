@@ -24,9 +24,9 @@ const Coming = () => {
 	const posterUrl = "https://image.tmdb.org/t/p/original";
 
 	return (
-		<div className="pages-content">
+		<div className="pages">
 			<h1 style={{ textAlign: "center" }}>Up Coming Movies</h1>
-			<div className="pages-container">
+			<div className="pages-container upcoming">
 				{movies.map((movie) => (
 					<div key={movie.id} className="movie-card">
 						<div className="image-container">

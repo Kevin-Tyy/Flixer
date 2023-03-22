@@ -20,8 +20,8 @@ const Navbar = () => {
 				<NavLink to="/series" className="link">Series</NavLink>
 			</div>
       <div>
-        <FontAwesomeIcon icon={faBell} className="icons"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <FontAwesomeIcon icon={faUser} className="icons"/>
+        <FontAwesomeIcon icon={faBell} className="icons" title="Sign in to get notified"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <FontAwesomeIcon icon={faUser} className="icons" title="Sign In to FlickFlair"/>
       </div>
 		</div>
 	);

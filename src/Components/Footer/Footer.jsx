@@ -20,10 +20,10 @@ const Footer= () => {
         </div>
     </div>
     <div className='social-icons'>
-        <FontAwesomeIcon icon={faLinkedin} className="icons"/>
-        <FontAwesomeIcon icon={faTwitter} className="icons"/>
-        <FontAwesomeIcon icon={faDiscord} className="icons"/>
-        <FontAwesomeIcon icon={faInstagram} className="icons"/>
+        <FontAwesomeIcon icon={faLinkedin} className="icons" title='Follow Us On LinkedIn'/>
+        <FontAwesomeIcon icon={faTwitter} className="icons" title='Follow US On Twitter'/>
+        <FontAwesomeIcon icon={faDiscord} className="icons" title='Join Our Discord Server'/>
+        <FontAwesomeIcon icon={faInstagram} className="icons" title='Follow Us On Instagram'/>
     </div>
     </footer>
     </>

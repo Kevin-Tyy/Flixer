@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import ReactStars from "react-rating-stars-component";
 function TVShows() {
 	const [shows, setShows] = useState([]);
 	const API_KEY = "a96ad25cf6347c7de13c995a2c2f4c2d";
@@ -20,7 +20,7 @@ function TVShows() {
 	const posterUrl = "https://image.tmdb.org/t/p/original";
 
 	return (
-		<div className="">
+		<div className="shows pages">
 			<h1 style={{ textAlign: "center" }}>Famous TV Shows</h1>
 			<div className="pages-container">
 				{shows.map((show) => (
@@ -30,8 +30,24 @@ function TVShows() {
 								src={`${posterUrl}` + show.poster_path}
 							/>
 						</div>
-						<h3>{show.title}</h3>
-						<p>{show.overview}</p>
+						<h3
+							style={{
+								fontSize: 17,
+								textAlign: "center",
+								margin: 10,
+							}}>
+							{show.title}
+						</h3>
+						<p style={{ lineHeight: 2.5 }}>{show.overview}</p>
+						<span style={{color : "purple"}}>Rating</span>
+						<ReactStars
+							count={show.rating}
+							size={20}
+							isHalf ={true}
+							activeColor="yellow"
+							color="grey"
+							
+						/>
 					</div>
 				))}
 			</div>
