@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './Pages.css'
 
 const Community = () => {
+  useEffect(()=>{
+    document.title = "FLickFlair | Community"
+  }, [])
   return (
     <div className='pages'>
         <h1>Sign in to join the Community</h1>

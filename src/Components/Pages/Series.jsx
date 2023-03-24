@@ -18,6 +18,8 @@ function TVSeries() {
 			.catch((error) => {
 				console.log(error);
 			});
+
+			document.title = " Flick Flair | Series"
 	}, []);
 	const posterUrl = "https://image.tmdb.org/t/p/original";
 

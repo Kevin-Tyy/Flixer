@@ -46,6 +46,7 @@ const Movies = () => {
 
 		fetchAPI();
 		fetchMovies();
+		document.title  = "Flick Flair | Watch Movies"
 	}, []);
 
 	const searchMovies = (e) => {
@@ -78,10 +79,9 @@ const Movies = () => {
 		if (selectedMovie.videos.results.length !== 0) {
 			const trailerArray = selectedMovie.videos.results.filter(
 				(video) =>
-					video.name.includes("Official Trailer") ||
 					video.name.includes("Trailer") ||
-					video.name.includes("trailer") ||
-					video.name.includes("Teaser")
+					video.name.includes("official")  
+				
 			);
 			const trailer = trailerArray[0];
 			const key = trailer
@@ -92,6 +92,7 @@ const Movies = () => {
 				<YouTube
 					videoId={key}
 					className="youtube_container"
+					title={selectedMovie.title}
 					opts={{
 						width: "100%",
 						height: "100%",
@@ -169,6 +170,7 @@ const Movies = () => {
 						className="hero"
 						style={{
 							backgroundImage: `url("${IMAGE_PATH}${selectedMovie.backdrop_path} ")`,
+							
 						}}>
 						<div className="hero-content ">
 							{playTrailer ? (
@@ -197,7 +199,7 @@ const Movies = () => {
 							<button
 								className="button"
 								onClick={() => setPlayTrailer(true)}>
-								<FontAwesomeIcon icon={faPlayCircle} /> &nbsp;
+								<FontAwesomeIcon icon={faPlayCircle} style={{fontSize: 30}}/> &nbsp;
 								Play Trailer
 							</button>
 						</div>
@@ -214,11 +216,14 @@ const Movies = () => {
 								selectedMovie={selectMovie}
 							/>
 						))}
+
 					</div>
 				</main>
 			) : (
 				<h1 className="message">Oops! Movie not found...</h1>
 			)}
+
+				
 		</div>
 	);
 };

@@ -16,13 +16,14 @@ function TVShows() {
 			.catch((error) => {
 				console.log(error);
 			});
+			document.title = "Flick Flair | Your Shows"
 	}, []);
 	const posterUrl = "https://image.tmdb.org/t/p/original";
 
 	return (
-		<div className="shows pages">
+		<div className="pages">
 			<h1 style={{ textAlign: "center" }}>Famous TV Shows</h1>
-			<div className="pages-container">
+			<div className="pages-container shows">
 				{shows.map((show) => (
 					<div key={show.id} className="movie-card">
 						<div className="image-container">

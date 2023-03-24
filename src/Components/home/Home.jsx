@@ -36,7 +36,7 @@ const Home = () => {
 			setPersons(await fetchPersons());
 			setTopRated(await fetchTopRatedMovie());
 		};
-
+		document.title = "Flick Flair | Home"
 		fetchAPI();
 	}, []);
 
@@ -85,9 +85,11 @@ const Home = () => {
 		return (
 			<div key={index} className="card">
 				<div>
-					<div className="img-container">
-						<img src={item.poster} alt={item.title} />
-					</div>
+					<Link to="/movies">
+						<div className="img-container">
+							<img src={item.poster} alt={item.title} />
+						</div>
+					</Link>
 				</div>
 				<div>
 					<p style={{ fontWeight: "bolder" }}>{item.title}</p>
@@ -96,24 +98,23 @@ const Home = () => {
 						size={20}
 						count={item.rating}
 						color={"#f1c10f"}
-						isHalf={true}>
-					</ReactStars>
+						isHalf={true}></ReactStars>
 				</div>
 			</div>
 		);
 	});
 
-	const trendingActors = persons.slice(0, 5).map((person, index) => {
+	const trendingActors = persons.slice(5,10).map((person, index) => {
 		return (
 			<div className="actors-card" key={index}>
 				<img src={person.profileImg} alt={person.name} />
 				<p>{person.name}</p>
-				<p>Trending for {person.known}</p>
+				<p>Famous for {person.known}</p>
 			</div>
 		);
 	});
 
-	const topRatedMovies = topRated.slice(0, 5).map((movie, index) => {
+	const topRatedMovies = topRated.slice(15, 20).map((movie, index) => {
 		return (
 			<div className="card" key={index}>
 				<div>
@@ -185,8 +186,7 @@ const Home = () => {
 				</div>
 				<h2 className="header-text">Trending Movies this week</h2>
 
-				<div className=" container-movie">
-					{movieList}</div>
+				<div className=" container-movie">{movieList}</div>
 				<div className="container-actors">
 					<h2 style={{ fontWeight: 700, color: "#5a606b" }}>
 						Trending Actors this Week
@@ -194,7 +194,9 @@ const Home = () => {
 					<div className="actors-list">{trendingActors}</div>
 				</div>
 				<div className="toprated">
-					<h2 className="header-text">Top Rated Movies this Week</h2>
+					<h2 className="header-text">
+						Top Rated Movies this Week
+					</h2>
 				</div>
 				<div className=" container-movie">{topRatedMovies}</div>
 			</div>

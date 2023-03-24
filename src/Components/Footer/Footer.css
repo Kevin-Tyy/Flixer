@@ -28,6 +28,16 @@ footer{
     display: flex;
     justify-content: center;
 }
+.contacts .contact{
+    margin-top: 10px;
+}
+.contacts .icons{
+    font-size: 14px;
+    
+}
+.social-icons a {
+    color: white;
+}
 .social-icons .icons{
     font-size: 25px;
     margin: 0 10px;

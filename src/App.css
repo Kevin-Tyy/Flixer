@@ -12,3 +12,8 @@ body {
 	font-size: 10px;
 }
 
+.grid{
+	display: grid;
+	grid-template-columns: 1fr 10fr;
+	/* background-color: red; */
+}

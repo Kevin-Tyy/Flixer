@@ -14,6 +14,8 @@
 	max-width: 1400px;
 	max-height: 600px;
 	object-fit: cover;
+	border-radius: 40px;
+
 }
 
 .carousel-center .icons {
@@ -83,6 +85,10 @@
 
 .card img{
 	width: 100%;
+}
+.card .img-container {
+	border-radius: 20px;
+	min-width: 200px;
 }
 .container-movie {
 	display: grid;

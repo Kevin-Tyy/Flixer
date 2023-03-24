@@ -23,6 +23,7 @@ const MovieCard = ({ movie, selectedMovie }) => {
 						<h3>No Image found </h3>
 					</div>
 				)}
+				
 			</div>
 
 			<h5 className="movie-title">{movie.title}</h5>

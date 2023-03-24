@@ -19,7 +19,9 @@ const Coming = () => {
 			.catch((error) => {
 				console.log(error);
 			});
+		document.title = "Flick Flair | Coming Soon "	
 	}, []);
+
 
 	const posterUrl = "https://image.tmdb.org/t/p/original";
 

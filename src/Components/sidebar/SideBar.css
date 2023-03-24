@@ -11,12 +11,12 @@
     border-right: 1px solid rgb(36, 36, 36);
 }
 .sidebar a{
-    color: rgb(68, 68, 68);
+    color: rgb(128, 118, 118);
     text-decoration: none;
     padding: 15px 20px;
     margin: 10px 15px  ;
-    border-radius: 14px;
-    transition: 0.2s;
+    border-radius: 10px;
+    transition: 0.3s;
     font-weight: 700;
 }
 .sidebar a:hover{
@@ -32,4 +32,9 @@
 }
 .sidebar a.active .icons{
     color: purple;
+}
+@media  only screen and (max-width : 1000px) {
+	.sidebar{
+		display: none;
+	}
 }
