@@ -22,6 +22,7 @@ const MovieCard = ({ movie, selectedMovie }) => {
 						<br />
 						<h3>No Image found </h3>
 					</div>
+		
 				)}
 			</div>
 

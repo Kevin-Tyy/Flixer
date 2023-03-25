@@ -39,7 +39,7 @@ body {
 	font-size: 50px;
 }
 .hero {
-	min-height: 62vh;
+	min-height: 600px;
 	margin: 20px auto 0;
 	position: relative;
 	background-position: center top;
@@ -179,7 +179,7 @@ body {
 	overflow-y: hidden;
 }
 .movie-card{
-	margin: 10px;
+	margin: 0px;
 	width: 250px;
 	height: 400px;
 }
@@ -257,7 +257,7 @@ body {
 	color: grey	;
 }
 .main{
-	width: 100%;
+	width: 90%;
 }
 .Play .icon{
 	font-size: 140px;

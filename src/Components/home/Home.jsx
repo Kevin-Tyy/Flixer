@@ -81,17 +81,18 @@ const Home = () => {
 		);
 	});
 
-	const movieList = movieByGenre.slice(0, 5).map((item, index) => {
+	const movieList = movieByGenre.slice(0, 6).map((item, index) => {
 		return (
 			<div key={index} className="card">
 				<div>
 					<Link to="/movies">
 						<div className="img-container">
 							<img src={item.poster} alt={item.title} />
+							<div className="overlay"></div>
 						</div>
 					</Link>
 				</div>
-				<div>
+				<div className="description">
 					<p style={{ fontWeight: "bolder" }}>{item.title}</p>
 					<p>rating : {item.rating}</p>
 					<ReactStars
@@ -104,7 +105,7 @@ const Home = () => {
 		);
 	});
 
-	const trendingActors = persons.slice(5,10).map((person, index) => {
+	const trendingActors = persons.slice(4,10).map((person, index) => {
 		return (
 			<div className="actors-card" key={index}>
 				<img src={person.profileImg} alt={person.name} />
@@ -114,15 +115,17 @@ const Home = () => {
 		);
 	});
 
-	const topRatedMovies = topRated.slice(15, 20).map((movie, index) => {
+	const topRatedMovies = topRated.slice(14, 20).map((movie, index) => {
 		return (
 			<div className="card" key={index}>
 				<div>
 					<div className="img-container">
 						<img src={movie.poster} alt={movie.title} />
+						<div className="overlay"></div>
+
 					</div>
 				</div>
-				<div>
+				<div className="description">
 					<p style={{ fontWeight: "bolder" }}>{movie.title}</p>
 					<p>rating : {movie.rating}</p>
 					<ReactStars
@@ -174,7 +177,6 @@ const Home = () => {
 	};
 	return (
 		<main className="main">
-			<div className="container-grid">
 				<div className="row">
 					<div className="movie-slider">
 						<Slider {...settings}>{movies}</Slider>
@@ -199,7 +201,6 @@ const Home = () => {
 					</h2>
 				</div>
 				<div className=" container-movie">{topRatedMovies}</div>
-			</div>
 		</main>
 	);
 };

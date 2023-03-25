@@ -33,7 +33,7 @@
 }
 .pages-container {
 	margin: 50px auto;
-	width: 60%;
+	/* width: 60%; */
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 }
