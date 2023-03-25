@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import "./Pages.css";
-
+import { TailSpin } from "react-loader-spinner";
 const Coming = () => {
 	const [movies, setMovies] = useState([]);
-
+	const [loading, setLoading] = useState(false);
 	const API_KEY = "a96ad25cf6347c7de13c995a2c2f4c2d";
 
 	useEffect(() => {
@@ -14,41 +14,58 @@ const Coming = () => {
 		)
 			.then((response) => {
 				setMovies(response.data.results);
+				setLoading(true);
 				console.log(movies);
 			})
 			.catch((error) => {
 				console.log(error);
 			});
-		document.title = "Flick Flair | Coming Soon "	
+		document.title = "Flick Flair | Coming Soon ";
 	}, []);
-
 
 	const posterUrl = "https://image.tmdb.org/t/p/original";
 
 	return (
-		<div className="pages">
-			<h1 style={{ textAlign: "center" }}>Up Coming Movies</h1>
-			<div className="pages-container upcoming">
-				{movies.map((movie) => (
-					<div key={movie.id} className="movie-card">
-						<div className="image-container">
-							<img
-								src={
-									`${posterUrl}` +
-									movie.backdrop_path
-								}
-								alt=""
-							/>
-						</div>
-						<h3>{movie.title}</h3>
-						<p>
-							<span>Release Date : </span>
-							{movie.release_date}
-						</p>
+		<>
+			{loading ? (
+				<div className="pages">
+					<h1 style={{ textAlign: "center" }}>
+						Up Coming Movies
+					</h1>
+					<div className="pages-container upcoming">
+						{movies.map((movie) => (
+							<div key={movie.id} className="movie-card">
+								<div className="image-container">
+									<img
+										src={
+											`${posterUrl}` +
+											movie.backdrop_path
+										}
+										alt=""
+									/>
+								</div>
+								<h3>{movie.title}</h3>
+								<p>
+									<span>Release Date : </span>
+									{movie.release_date}
+								</p>
+							</div>
+						))}
 					</div>
-				))}
-			</div>
-		</div>
+				</div>
+			) : (
+				<TailSpin
+					height="80"
+					width="80"
+					color="#4fa94d"
+					ariaLabel="tail-spin-loading"
+					radius="1"
+					wrapperStyle={{}}
+					wrapperClass=""
+					visible={true}
+				/>
+			)}
+		</>
 	);
 };
 

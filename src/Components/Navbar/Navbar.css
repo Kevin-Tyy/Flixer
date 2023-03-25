@@ -7,10 +7,10 @@
     position: fixed;
     top: 0;
     width: 100%;
-    height: 70px;
+    height: 65px;
     z-index: 9999;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-content: center;
 }
     
@@ -19,16 +19,16 @@
     text-decoration: none;
     font-weight: 700;
     color: rgb(139, 130, 130);
-    padding: 25px 13px;
+    padding: 22px 13px;
     margin: 0 30px ;
     transition: 0.2s;
 }
 .nav-container  a.link.active{
-    border-bottom: 5px solid purple;
+    border-bottom: 5px solid rgb(64, 4, 155);
     color: white;
 }
 .nav-container a.link:hover{
-    border-bottom: 5px solid purple;
+    border-bottom: 5px solid rgb(64, 4, 155);
     color: white;
 
 }
@@ -37,16 +37,21 @@
     padding: 10px;
 }
 .nav-container .logo h1 > span {
-	color: purple;
-	text-shadow: 5px 5px 10px purple;
+	color: rgb(80, 0, 200);
+	text-shadow: 5px 5px 10px rgb(81, 2, 105);
 }
 .nav-container .icons{
     font-size: 20px;
     cursor: pointer;
+    margin-top: -8px;
+    padding: 10px;
     color: grey;
+    border-radius: 50%;
+    transition: 0.3s;
 }
 .nav-container .icons:hover{
     color: white;
+    background-color: rgb(54, 54, 54, 0.6);
 }
 .logo{
     transform: translate(20px, -20px);
@@ -56,4 +61,23 @@
 }
 .logo a{
     text-decoration: none;
+}
+
+.nav-container .nav-button{
+    width: 120px;
+    height: 30px;
+    color: #fff;
+    cursor: pointer;
+    background-color: rgb(80, 0, 200);
+    border: none;
+    border-radius: 5px;
+    margin: 0 20px;
+    transform: translateY(-15px);
+    transition: 0.3s;
+    font-size: 10px;
+    font-weight: 700;
+}
+.nav-container .nav-button:hover{
+    background-color: rgb(56, 0, 139);
+
 }

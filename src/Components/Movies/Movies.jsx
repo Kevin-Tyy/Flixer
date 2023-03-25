@@ -79,9 +79,9 @@ const Movies = () => {
 		if (selectedMovie.videos.results.length !== 0) {
 			const trailerArray = selectedMovie.videos.results.filter(
 				(video) =>
-					video.name.includes("Trailer") ||
-					video.name.includes("official")  
-				
+				video.name.includes("Official Trailer") ||
+				video.name.includes("official") || 
+				video.name.includes("Trailer") 
 			);
 			const trailer = trailerArray[0];
 			const key = trailer
@@ -138,6 +138,7 @@ const Movies = () => {
 
 	return (
 		<div className="App">
+			
 			<div className="margin"></div>
 
 			{movies.length ? (

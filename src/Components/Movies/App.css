@@ -217,8 +217,8 @@ body {
 	text-align: center;
 	margin: 100px auto;
 	margin-bottom: 70vh;
-	background: linear-gradient(to right, rgb(252, 84, 229)0%, rgb(78, 7, 109)50%);
-	text-shadow: 2px 2px 20px purple;
+	background: linear-gradient(to right, rgb(100, 0, 200)0%, rgb(78, 7, 200)50%);
+	text-shadow: 2px 2px 40px rgb(40, 47, 200);
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	font-size: x-large;
@@ -257,13 +257,11 @@ body {
 	color: grey	;
 }
 .main{
-	float: right;
-	width: 75%;
-	margin: 0 100px;
+	width: 100%;
 }
 .Play .icon{
 	font-size: 140px;
-	color: purple;
+	color: rgb(60, 11, 200);
 
 }
 @media only screen and (max-width : 960px){

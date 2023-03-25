@@ -2,7 +2,9 @@
 	margin: 0;
 	padding: 0;
 }
-
+.main{
+	width: 100%;
+}
 .carousel-center {
 	margin-top: 100px;
 	display: flex;

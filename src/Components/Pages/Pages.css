@@ -10,11 +10,11 @@
 	background-clip: text;
 	background: linear-gradient(
 		to right,
-		rgb(255, 100, 203) 0%,
-		rgb(53, 0, 78) 70%
+		rgb(64, 0, 203) 0%,
+		rgb(80, 0, 150) 70%
 	);
-	text-shadow: 2px 2px 20px purple;
-	font-size: 25px;
+	text-shadow: 2px 2px 30px rgb(80, 0, 200);
+	font-size: 18px;
 	text-align: center;
 	margin-top: 100px;
 	font-family: cursive;
@@ -123,3 +123,4 @@
 	height: 300px;
 	margin: 10px auto;
 }
+

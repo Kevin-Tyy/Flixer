@@ -22,6 +22,7 @@ const Navbar = () => {
       <div>
         <FontAwesomeIcon icon={faBell} className="icons" title="Sign in to get notified"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <FontAwesomeIcon icon={faUser} className="icons" title="Sign In to FlickFlair"/>
+		<button className="nav-button">Sign Up</button>
       </div>
 		</div>
 	);

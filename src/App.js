@@ -17,29 +17,36 @@ import Page404 from "./Components/Pages/404";
 const App = () => {
 	return (
 		<>
-			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/movies" element={<Movies />} />
-				<Route path="/watchlist" element={<WatchList />} />
-				<Route path="/bookmark" element={<Bookmarks />} />
-				<Route path="/downloads" element={<Downloads />} />
-				<Route path="/Community" element={<Community />} />
-				<Route path="/comingsoon" element={<Coming />} />
-				<Route path="/browse" element={<Navigate to="/movies" />} />
-				<Route path="/shows" element={<Shows />} />
-				<Route path="/series" element={<Series />} />
-				<Route path="*" element={<Page404 />} />
-			</Routes>
+
 			<main>
 				<Navbar />
 				<div className="grid">
-					<SideBar />
 					<div>
-						
+						<SideBar />
+
 					</div>
+					<div>
+						<div>
+						<Routes>
+							<Route path="/" element={<Home />} />
+							<Route path="/movies" element={<Movies />} />
+							<Route path="/watchlist" element={<WatchList />} />
+							<Route path="/bookmark" element={<Bookmarks />} />
+							<Route path="/downloads" element={<Downloads />} />
+							<Route path="/Community" element={<Community />} />
+							<Route path="/comingsoon" element={<Coming />} />
+							<Route path="/browse" element={<Navigate to="/movies" />} />
+							<Route path="/shows" element={<Shows />} />
+							<Route path="/series" element={<Series />} />
+							<Route path="*" element={<Page404 />} />
+						</Routes>
+						</div>
+
+						<Footer />
+					</div>
+
 				</div>
 
-				<Footer />
 			</main>
 		</>
 	);
