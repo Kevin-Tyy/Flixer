@@ -44,40 +44,45 @@ function TVSeries() {
 										}
 									/>
 								</div>
-
-								<h2>{serie.name}</h2>
-								<p style={{ lineHeight: 5 }}>
+								<div className="description">
+									<h2>{serie.name}</h2>
+									<p style={{ lineHeight: 3 }}>
+										<span
+											style={{
+												color: "purple",
+											}}>
+											First Release Date :{" "}
+										</span>
+										{serie.first_air_date}
+									</p>
 									<span style={{ color: "purple" }}>
-										First Release Date :{" "}
+										Rating
 									</span>
-									{serie.first_air_date}
-								</p>
-								<p>{serie.overview}</p>
-								<span style={{ color: "purple" }}>
-									Rating
-								</span>
-								<ReactStars
-									count={serie.rating}
-									size={20}
-									isHalf={true}
-									activeColor="yellow"
-									color="grey"
-								/>
+									<ReactStars
+										count={serie.rating}
+										size={20}
+										isHalf={true}
+										activeColor="yellow"
+										color="grey"
+									/>
+								</div>
 							</div>
 						))}
 					</div>
 				</div>
 			) : (
-				<TailSpin
-					height="80"
-					width="80"
-					color="#4000cb"
-					ariaLabel="tail-spin-loading"
-					radius="1"
-					wrapperStyle={{}}
-					wrapperClass=""
-					visible={true}
-				/>
+				<div className="spinner">
+					<TailSpin
+						height="80"
+						width="80"
+						color="#4000cb"
+						ariaLabel="tail-spin-loading"
+						radius="1"
+						wrapperStyle={{}}
+						wrapperClass=""
+						visible={true}
+					/>
+				</div>
 			)}
 		</>
 	);

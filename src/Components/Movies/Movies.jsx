@@ -119,19 +119,7 @@ const Movies = () => {
 			);
 		}
 	};
-	const genreList = genres.map((item, index) => {
-		return (
-			<li key={index}>
-				<button
-					type="button"
-					onClick={() => {
-						handleGenreClick(item.id);
-					}}>
-					{item.name}
-				</button>
-			</li>
-		);
-	});
+
 
 	return (
 		<>
@@ -200,7 +188,7 @@ const Movies = () => {
 										<h1>{selectedMovie.title}</h1>
 
 										{selectedMovie.overview ? (
-											<p>
+											<p className="overview">
 												{
 													selectedMovie.overview
 												}
@@ -221,12 +209,7 @@ const Movies = () => {
 									</button>
 								</div>
 							</div>
-							<div className="genres">
-								<h3>Filter Movies by Genre</h3>
-								<ul className="genre_list">
-									{genreList}
-								</ul>
-							</div>
+
 							<div className="container">
 								{movies.map((movie) => (
 									<MovieCard

@@ -42,7 +42,7 @@ export const fetchGenre = async () => {
 				api_key: API_KEY,
 				language: "en_US",
 				page: 1,
-			},
+			}
 		});
 		const modifiedData = data["genres"].map((genre) => ({
 			id: genre["id"],

@@ -135,7 +135,6 @@
 
     .nav-container .nav-links a{
         margin-left: 5px;
-        padding-right: 0;
     }
 }
 @media only screen and (max-width:600px) {
@@ -147,6 +146,7 @@
         align-items: center;
         transform: translateY(-12px);
     }
+ 
  
 
     

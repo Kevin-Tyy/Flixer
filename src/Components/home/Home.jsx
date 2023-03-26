@@ -179,7 +179,6 @@ const Home = () => {
 		
 	};
 	return (
-		
 		<main className="main">
 				<div className="movie-slider">
 					<Slider {...settings}>{movies}</Slider>

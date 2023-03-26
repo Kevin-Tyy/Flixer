@@ -16,6 +16,7 @@ body {
 	text-align: center;
 	margin: 30px auto;
 	grid-template-columns: repeat(5, 1fr);
+	gap: 10px;
 	
 }
 .movie-cover {
@@ -39,7 +40,7 @@ body {
 	font-size: 50px;
 }
 .hero {
-	min-height: 600px;
+	height: 700px;
 	margin: 20px auto 0;
 	position: relative;
 	background-position: center top;
@@ -51,9 +52,9 @@ body {
 }
 
 .hero h1 {
-	font-size: 40px;
+	font-size: 30px;
 	margin: 0;
-	color: rgb(226, 218, 218);
+	color: rgb(95, 95, 95);
 	
 }
 .hero p{
@@ -62,7 +63,7 @@ body {
 .button {
 	background: linear-gradient(
 		to right,
-		rgb(255, 0, 179) 0%,
+		rgb(64, 0, 179) 0%,
 		rgb(66, 0, 128) 100%
 	);
 	color: white;
@@ -88,7 +89,7 @@ body {
 	margin: 0 50px;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	column-gap: 150px;
+	column-gap: 100px;
 	width: 100%;
 	padding-bottom: 50px;
 }
@@ -145,7 +146,7 @@ body {
 	font-size: 12px;
 	background: linear-gradient(
 		to right,
-		rgb(255, 0, 179) 0%,
+		rgb(63, 0, 179) 0%,
 		rgb(66, 0, 128) 100%
 	);
 	transform: translateX(-5px);
@@ -175,13 +176,16 @@ body {
 	transform: translate(28px, 0);
 }
 .image-container{
+	width: 100%;
+	height: 100%;
 	overflow-x: hidden;
 	overflow-y: hidden;
 }
 .movie-card{
-	margin: 0px;
-	width: 250px;
+	width: 100%;
+	min-width: 250px;
 	height: 400px;
+	margin-bottom: 50px;
 }
 .movie-card img{
 	transition: 0.5s;
@@ -200,8 +204,8 @@ body {
 .nomovie h2{
 	color: transparent;
 	background-clip: text;
-	background: linear-gradient(to right, rgb(255, 100, 203)0%, rgb(53, 0, 78)70%);
-	text-shadow: 2px 2px 20px purple;
+	background: linear-gradient(to right, rgb(6, 100, 203)0%, rgb(53, 0, 78)70%);
+	text-shadow: 2px 2px 20px rgb(60, 0, 128);
 	font-size: 25px;
 	margin-top: 30px;
 	font-family: cursive;
@@ -223,39 +227,7 @@ body {
 	-webkit-text-fill-color: transparent;
 	font-size: x-large;
 }
-.genres{
-	width: 100%;
-	margin: 30px auto;
-}
-.genre_list li {
-	list-style-type: none;
-}
-.genre_list{
-  display: flex;
-  flex-direction: row ;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.genre_list li>button{
-  background-color: transparent;
-  border: 2px solid #5a606b;
-  color: #5a606b;
-  margin: 7px 5px  ;
-  padding: 9px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.1s ease-out;
-}
-.genre_list button:hover{
-  border: 2px solid white;
-  color: white;
-}
-.genres h3{
-	text-align: center;
-	text-transform: uppercase;
-	margin: 10px;
-	color: grey	;
-}
+
 .main{
 	width: 90%;
 }
@@ -264,22 +236,88 @@ body {
 	color: rgb(60, 11, 200);
 
 }
-@media only screen and (max-width : 960px){
+@media only screen and (max-width : 1400px){
 	.container{
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: repeat(4, 1fr);
 	}
 
 }
-@media only screen and (max-width : 770px){
+@media only screen and (max-width : 1200px){
 	.container{
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.hero{
+		min-height: none !important;
+		height: 550px;
 	}
 }
-@media only screen and (max-width : 550px){
+@media only screen and (max-width : 900px){
+	.container{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.movie-card{
+		min-width: none;
+	}
+	.hero{
+		border-radius: 10px;
+		min-height: none !important;
+		height: 450px;
+	}
+	.header-content h1, .overview {
+		display: none;
+	}
+	.header-content{
+		justify-content: center;
+	}
+	.header-content input{
+		width: 380px;
+		
+	}
+	.hero-content{
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.hero .button{
+		width: 180px;
+		height: 45px;
+		font-size: 10px;
+		padding: 0;
+		justify-content: flex-start;
+		padding-left: 10px;
+	}
+}
+
+@media only screen and (max-width : 500px){
 	.container{
 		display: grid;
 		grid-template-columns: 1fr;
+		margin: 0;
 	}
+	.movie-card{
+		width: 100%;
+		margin:  0 auto 30px;
+	}
+
+	.hero{
+		min-height: none !important;
+		height: 300px;
+		width: 100%;
+		margin: 0;
+
+	}
+	.icons{
+		font-size: 0px;
+	}
+	.header-content input{
+		width: 100%;
+		margin: 0;
+	}
+	.main{
+		margin: 0;
+	}
+	
+	
 }

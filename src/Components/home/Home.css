@@ -4,7 +4,7 @@
 }
 .main{
 	width: 100%;
-	margin: auto;
+	margin: 0;
 }
 .carousel-center {
 	margin-top: 100px;
@@ -22,7 +22,7 @@
 }
 
 .carousel-center .icons {
-	font-size: 100px;
+	font-size: 1000%;
 	color: #f4c10f;
 	position: absolute;
 	top: 40%;
@@ -86,10 +86,9 @@
   
 }
 .card{
-	margin: 5px;
 	overflow: hidden;
 	height: 340px;
-	width: 90%;
+	width: 100%;
 	min-width: 230px;
 	min-height: 340px;
 	position: relative;
@@ -107,11 +106,14 @@
 .container-movie {
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
+	gap: 10px;
+
 }
 .actors-list{
 	margin: 30px ;
 	display: flex;
 	grid-template-columns: repeat(4, 1fr);
+	gap: 10px;
 }
 .container-actors h2{
 	text-transform: uppercase;
@@ -121,8 +123,7 @@
 	width: 100%;
 	background-color: rgb(0, 0, 0, 0.5);
 	padding: 40px 40px 0 40px;
-	margin: 10px;
-	border-radius: 30px;
+	border-radius: 20px;
 }
 .actors-card img{
 	max-width: 200px;
@@ -193,20 +194,35 @@
 	  );
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1500px) {
+	.main{
+		width: 900px;
+		margin-left: 20px;
+	}
 	.movie-slider{
 		width: 700px;
 	}
-	.container-movie, .container-actors{
+	.container-movie, .actors-list{
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
+		width: 40%;
+	}
+
+}
+@media only screen and (max-width:600px){
+	.main{
+		width: 500px;
+	}
+	.actors-list{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		margin: 10px;
 	}
 	.card{
-		width: 200px;
+		width: 300px;
+		max-width: none;
 	}
-}
-@media only screen and (max-width:1500px){
 	.movie-slider{
-		width: 1200px;
+		width: 400px;
 	}
 }
