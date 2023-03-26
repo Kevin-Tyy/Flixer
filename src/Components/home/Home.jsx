@@ -171,12 +171,15 @@ const Home = () => {
 		autoplay: true,
 		slidesToShow: 1,
 		slidesToScroll: 1,
+		width: '80',
 		pauseOnVisisbility: true,
-		
 		nextArrow: <CustomNext />,
 		prevArrow: <CustomPrev />,
+		
+		
 	};
 	return (
+		
 		<main className="main">
 				<div className="movie-slider">
 					<Slider {...settings}>{movies}</Slider>

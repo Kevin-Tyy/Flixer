@@ -14,6 +14,9 @@
     align-content: center;
 }
     
+.nav-links{
+    display: block;
+}
 
 .nav-container a.link{
     text-decoration: none;
@@ -22,6 +25,7 @@
     padding: 22px 13px;
     margin: 0 30px ;
     transition: 0.2s;
+    white-space: nowrap;
 }
 .nav-container  a.link.active{
     border-bottom: 5px solid rgb(64, 4, 155);
@@ -79,5 +83,72 @@
 }
 .nav-container .nav-button:hover{
     background-color: rgb(56, 0, 139);
+
+}
+.nav-container .toggle{
+    display: none;
+    margin: 0;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    transform: translateY(-10px);
+}
+.utils-X{
+    display: none;
+    width: 400px;
+    position: fixed;
+    right: 0;
+    top: 65px;
+    display: flex;
+    flex-direction: column;
+    height: 86vh;
+    background-color: rgb(0, 0, 0);
+
+}
+
+@media only screen and (max-width: 1000px){
+    .nav-container .toggle{
+        display: block;
+    }
+    .nav-container .utils{
+        display: none;
+    }   
+    .nav-container .utils-X .icons{
+        border-radius: 10px;
+        width: 60%;
+        margin: 0 auto;
+    }
+    .nav-container .utils-X button {
+        width: 65%;
+        padding: 10px 40px;
+        height: 40px;
+        border-radius: 1    0px;
+        position: relative;
+        top: 40px;
+        left: 50px;
+    }
+    .nav-container{
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .nav-container .nav-links a{
+        margin-left: 5px;
+        padding-right: 0;
+    }
+}
+@media only screen and (max-width:600px) {
+    .nav-container .logo{
+        display: none;
+    }
+    .nav-container .nav-links{
+        display: flex;
+        align-items: center;
+        transform: translateY(-12px);
+    }
+ 
+
+    
 
 }

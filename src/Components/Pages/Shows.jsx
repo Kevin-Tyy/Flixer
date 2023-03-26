@@ -67,16 +67,18 @@ function TVShows() {
 					</div>
 				</div>
 			) : (
-				<TailSpin
-					height="80"
-					width="80"
-					color="#4fa94d"
-					ariaLabel="tail-spin-loading"
-					radius="1"
-					wrapperStyle={{}}
-					wrapperClass=""
-					visible={true}
-				/>
+				<div className="spinner">
+					<TailSpin
+						height="80"
+						width="80"
+						color="#4000cb"
+						ariaLabel="tail-spin-loading"
+						radius="1"
+						wrapperStyle={{}}
+						wrapperClass=""
+						visible={true}
+					/>
+				</div>
 			)}
 		</>
 	);

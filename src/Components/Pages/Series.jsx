@@ -71,7 +71,7 @@ function TVSeries() {
 				<TailSpin
 					height="80"
 					width="80"
-					color="#4fa94d"
+					color="#4000cb"
 					ariaLabel="tail-spin-loading"
 					radius="1"
 					wrapperStyle={{}}

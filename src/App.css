@@ -17,3 +17,9 @@ body {
 	display: grid;
 	grid-template-columns: 1fr 10fr;
 }
+.page-content{
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+}

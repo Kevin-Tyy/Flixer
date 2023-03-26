@@ -25,7 +25,7 @@ const App = () => {
 						<SideBar />
 
 					</div>
-					<div>
+					<div className="page-content">
 						<div>
 						<Routes>
 							<Route path="/" element={<Home />} />

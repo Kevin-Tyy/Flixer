@@ -3,14 +3,14 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin-bottom: auto;
+	margin-bottom: 15vh;
 }
 .pages h1 {
 	color: transparent;
 	background-clip: text;
 	background: linear-gradient(
 		to right,
-		rgb(64, 0, 203) 0%,
+		#4000cb 0%,
 		rgb(80, 0, 150) 70%
 	);
 	text-shadow: 2px 2px 30px rgb(80, 0, 200);
@@ -43,6 +43,7 @@
 	border-radius: 20px;
 	padding: 40px;
 	margin: 20px 10px;
+	height: auto;
 }
 
 .pages-container span {
@@ -112,7 +113,7 @@
 
 .shows{
 	display: grid;
-	grid-template-columns: repeat(3, 1fr) !important;
+	grid-template-columns: repeat(4, 1fr) !important;
 }
 .shows h1{
 	margin: 0 auto;
@@ -137,12 +138,11 @@
 
 .spinner {
 	display: block;
-	position: fixed;
-	z-index: 1031; /* High z-index so it is on top of the page */
-	top: 50%;
-	left: 50%;
-	margin-top: -40px; /* half of the spinner height */
-	margin-left: -40px; /* half of the spinner width */
+	position: relative;
+	z-index: 1031; 
+	margin-bottom: 90vh;
+	top: 40%;
+	left: 40%;
   }
 @media only screen and (width: 500px){
 	.series{
@@ -193,8 +193,17 @@
 	.upcoming{
 		display: grid;
 		grid-template-columns: repeat(1, 1fr);
+
 	}.upcoming .movie-card{
 		width: 100%;
+		height: 350px;
+		max-width: none;
+	}
+}
+@media only screen and (max-width:600px){
+	.upcoming .movie-card{
+		min-width: 400px;
+		height: 320px;
 		max-width: none;
 	}
 }

@@ -3,13 +3,9 @@ import axios from "axios";
 import "./App.css";
 import MovieCard from "./MovieCard";
 import YouTube from "react-youtube";
+import { TailSpin } from "react-loader-spinner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faClose,
-	faFilm,
-	
-	faSearch,
-} from "@fortawesome/free-solid-svg-icons";
+import { faClose, faFilm, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import { fetchGenre } from "../../services/index";
 import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
@@ -19,6 +15,7 @@ const Movies = () => {
 	const [selectedMovie, setselectedMovie] = useState({});
 	const [playTrailer, setPlayTrailer] = useState(false);
 	const [genres, setGenres] = useState([]);
+	const [loading, setLoading] = useState(false);
 
 	const API_URL = "https://api.themoviedb.org/3";
 	const IMAGE_PATH = "http://images.tmdb.org/t/p/original";
@@ -34,7 +31,7 @@ const Movies = () => {
 				query: searchKey,
 			},
 		});
-
+		setLoading(true);
 		setMovies(results);
 		await selectMovie(results[0]);
 	};
@@ -46,7 +43,7 @@ const Movies = () => {
 
 		fetchAPI();
 		fetchMovies();
-		document.title  = "Flick Flair | Watch Movies"
+		document.title = "Flick Flair | Watch Movies";
 	}, []);
 
 	const searchMovies = (e) => {
@@ -79,9 +76,9 @@ const Movies = () => {
 		if (selectedMovie.videos.results.length !== 0) {
 			const trailerArray = selectedMovie.videos.results.filter(
 				(video) =>
-				video.name.includes("Official Trailer") ||
-				video.name.includes("official") || 
-				video.name.includes("Trailer") 
+					video.name.includes("Official Trailer") ||
+					video.name.includes("official") ||
+					video.name.includes("Trailer")
 			);
 			const trailer = trailerArray[0];
 			const key = trailer
@@ -137,95 +134,130 @@ const Movies = () => {
 	});
 
 	return (
-		<div className="App">
-			
-			<div className="margin"></div>
+		<>
+			{loading ? (
+				<div className="App">
+					<div className="margin"></div>
 
-			{movies.length ? (
-				<main className="main">
-					<header className="header">
-						<div className="header-content">
-							<h1>
-								Flick<span>Flair</span>
-							</h1>
+					{movies.length ? (
+						<main className="main">
+							<header className="header">
+								<div className="header-content">
+									<h1>
+										Flick<span>Flair</span>
+									</h1>
 
-							<form onSubmit={searchMovies}>
-								<FontAwesomeIcon
-									icon={faSearch}
-									className="input-icon"
-								/>
-								<input
-									type="text"
-									onChange={(e) =>
-										setSearchKey(e.target.value)
-									}
-									placeholder="search for movies"
-									style={{ fontSize: "12px" }}
-								/>
+									<form onSubmit={searchMovies}>
+										<FontAwesomeIcon
+											icon={faSearch}
+											className="input-icon"
+										/>
+										<input
+											type="text"
+											onChange={(e) =>
+												setSearchKey(
+													e.target.value
+												)
+											}
+											placeholder="search for movies"
+											style={{
+												fontSize: "12px",
+											}}
+										/>
 
-								<button type="submit">Search</button>
-							</form>
-						</div>
-					</header>
-					<div
-						className="hero"
-						style={{
-							backgroundImage: `url("${IMAGE_PATH}${selectedMovie.backdrop_path} ")`,
-							
-						}}>
-						<div className="hero-content ">
-							{playTrailer ? (
-								<button
-									className="button__close"
-									onClick={() => {
-										setPlayTrailer(false);
-									}}>
-									<FontAwesomeIcon icon={faClose} />
-								</button>
-							) : null}
+										<button type="submit">
+											Search
+										</button>
+									</form>
+								</div>
+							</header>
+							<div
+								className="hero"
+								style={{
+									backgroundImage: `url("${IMAGE_PATH}${selectedMovie.backdrop_path} ")`,
+								}}>
+								<div className="hero-content ">
+									{playTrailer ? (
+										<button
+											className="button__close"
+											onClick={() => {
+												setPlayTrailer(
+													false
+												);
+											}}>
+											<FontAwesomeIcon
+												icon={faClose}
+											/>
+										</button>
+									) : null}
 
-							{selectedMovie.videos && playTrailer == true
-								? renderTrailer()
-								: null}
+									{selectedMovie.videos &&
+									playTrailer == true
+										? renderTrailer()
+										: null}
 
-							<div>
-								<h1>{selectedMovie.title}</h1>
+									<div>
+										<h1>{selectedMovie.title}</h1>
 
-								{selectedMovie.overview ? (
-									<p> {selectedMovie.overview} </p>
-								) : null}
+										{selectedMovie.overview ? (
+											<p>
+												{
+													selectedMovie.overview
+												}
+											</p>
+										) : null}
+									</div>
+
+									<button
+										className="button"
+										onClick={() =>
+											setPlayTrailer(true)
+										}>
+										<FontAwesomeIcon
+											icon={faPlayCircle}
+											style={{ fontSize: 30 }}
+										/>{" "}
+										&nbsp; Play Trailer
+									</button>
+								</div>
 							</div>
-							
-
-							<button
-								className="button"
-								onClick={() => setPlayTrailer(true)}>
-								<FontAwesomeIcon icon={faPlayCircle} style={{fontSize: 30}}/> &nbsp;
-								Play Trailer
-							</button>
-						</div>
-					</div>
-					<div className="genres">
-						<h3>Filter Movies by Genre</h3>
-						<ul className="genre_list">{genreList}</ul>
-					</div>
-					<div className="container">
-						{movies.map((movie) => (
-							<MovieCard
-								key={movie.id}
-								movie={movie}
-								selectedMovie={selectMovie}
-							/>
-						))}
-
-					</div>
-				</main>
+							<div className="genres">
+								<h3>Filter Movies by Genre</h3>
+								<ul className="genre_list">
+									{genreList}
+								</ul>
+							</div>
+							<div className="container">
+								{movies.map((movie) => (
+									<MovieCard
+										key={movie.id}
+										movie={movie}
+										selectedMovie={selectMovie}
+									/>
+								))}
+							</div>
+						</main>
+					) : (
+						<h1 className="message">
+							Oops! Movie not found...
+						</h1>
+					)}
+				</div>
 			) : (
-				<h1 className="message">Oops! Movie not found...</h1>
+				<div className="spinner">
+					<TailSpin
+						height="80"
+						width="80"
+						color="#4000cb"
+						ariaLabel="tail-spin-loading"
+						radius="1"
+						wrapperStyle={{}}
+						wrapperClass=""
+						visible={true}
+					/>
+				</div>
 			)}
-
-				
-		</div>
+		</>
 	);
 };
 
