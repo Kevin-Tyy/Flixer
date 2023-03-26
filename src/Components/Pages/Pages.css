@@ -41,7 +41,7 @@
 .pages-container .movie-card {
 	background-color: rgb(0, 0, 0, 0.3);
 	border-radius: 20px;
-	padding: 50px 0px 50px 50px;
+	padding: 40px;
 	margin: 20px 10px;
 }
 
@@ -63,23 +63,26 @@
 }
 .upcoming{
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(5, 1fr);
 }
 .upcoming .movie-card{
-	width: 300px;
+	width: 90%;
+	max-width: 400px;
+	margin: 10px !important;
+
 }
 .upcoming img{
-	width: 250px;
+	width: 100%;
 	height: 200px;
 }
 .upcoming .image-container{
-	width: 250px;
+	width: 100%;
 	height: 200px;
 }
 
 .series{
     display: grid;
-    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-columns: repeat(3, 1fr) ;
     
 }
 .series img {
@@ -91,12 +94,19 @@
 	cursor: pointer;
 }
 .series .movie-card{
-	width: 450px;
+	width: 90%;
+	max-width: 500px;
+	padding: 20px;
+	
 	height: auto;
 }
 .series .image-container{
-	width: 350px;
+	max-width: 400px;
+	margin: 10px auto;
 
+}
+.series .image-container img{
+	width: 100%;
 }
 
 
@@ -124,3 +134,67 @@
 	margin: 10px auto;
 }
 
+
+.spinner {
+	display: block;
+	position: fixed;
+	z-index: 1031; /* High z-index so it is on top of the page */
+	top: 50%;
+	left: 50%;
+	margin-top: -40px; /* half of the spinner height */
+	margin-left: -40px; /* half of the spinner width */
+  }
+@media only screen and (width: 500px){
+	.series{
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+  
+@media only screen and (max-width:800px){
+	.series{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr) ;
+	}
+
+}  
+@media only screen and (max-width:1000px){
+
+	.upcoming{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+  
+@media only screen and (max-width:1800px){
+
+	.upcoming{
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+  
+@media only screen and (max-width:1500px){
+
+	.upcoming{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+  
+@media only screen and (max-width:1000px){
+
+	.upcoming{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media only screen and (max-width: 900px){
+	.upcoming{
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+	}.upcoming .movie-card{
+		width: 100%;
+		max-width: none;
+	}
+}

@@ -10,10 +10,10 @@ body {
 	color: white;
 	font-family: 'Poppins', sans-serif !important;
 	font-size: 10px;
+
 }
 
 .grid{
 	display: grid;
-	grid-template-columns: 1fr 15fr;
-	/* background-color: red; */
+	grid-template-columns: 1fr 10fr;
 }

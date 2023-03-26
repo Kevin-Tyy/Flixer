@@ -63,6 +63,7 @@ const Coming = () => {
 					wrapperStyle={{}}
 					wrapperClass=""
 					visible={true}
+					className="spinner"
 				/>
 			)}
 		</>

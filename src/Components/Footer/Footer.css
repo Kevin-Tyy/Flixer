@@ -1,55 +1,77 @@
-footer{
-    border-top: 1px solid rgb(34, 34, 34);
-    width: 100%;
-    margin: 50px 30px 0 auto;
-    padding: 30px; 
-    clear: both; 
-    
+footer {
+	border-top: 1px solid rgb(34, 34, 34);
+	width: 100%;
+	margin: 50px 0px 0 auto;
+	padding: 30px;
+	clear: both;
 }
-.footer-flex{
-    display: flex;
-    justify-content: space-around;
-
+.footer-flex {
+	display: flex;
+	justify-content: space-around;
 }
-.footer-flex .about{
-    width: 60%;
+.footer-flex .about {
+	width: 60%;
 }
-.footer-flex  p{
-    line-height: 40px;
-    color: grey;
+.footer-flex p {
+	line-height: 40px;
+	color: grey;
 }
-.footer-flex h2{
-    color: grey;
+.footer-flex h2 {
+	color: grey;
 }
-.footer-flex span{
-    font-weight: 700;
+.footer-flex span {
+	font-weight: 700;
 }
-.social-icons{
-    margin: 20px;
-    display: flex;
-    justify-content: center;
+.social-icons {
+	margin: 20px;
+	display: flex;
+	justify-content: center;
 }
-.contacts .contact{
-    margin-top: 10px;
+.contacts .contact {
+	margin-top: 10px;
 }
-.contacts .icons{
-    font-size: 14px;
-    
+.contacts .icons {
+	font-size: 14px;
 }
 .social-icons a {
-    color: white;
+	color: white;
 }
-.social-icons .icons{
-    font-size: 25px;
-    margin: 0 10px;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: 0.3s;
-    margin: 10px;
+.social-icons .icons {
+	font-size: 25px;
+	margin: 0 10px;
+	cursor: pointer;
+	border-radius: 50%;
+	transition: 0.3s;
+	margin: 10px;
 }
-.social-icons .icons:hover{
-    color: rgb(95, 95, 95);
+.social-icons .icons:hover {
+	color: rgb(95, 95, 95);
 }
-.social-icons .icons:active{
-    scale: 0.9;
+.social-icons .icons:active {
+	scale: 0.9;
 }
+@media only screen and (max-width: 1000px) {
+	.footer-flex {
+		display: flex;
+		flex-direction: column;
+		margin: 0 0 0 50px;
+        justify-content: center;
+		padding-top: 20px;
+	}
+	.footer-flex .about {
+        padding: 0;
+		width: 80%;
+		margin-bottom: 20px;
+	}
+	.footer-flex p {
+		line-height: 25px;
+		color: grey;
+	}
+	footer {
+		margin: 0;
+		margin: 0 0 100px -20px;
+		padding: 0;
+	}
+
+}
+

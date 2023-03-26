@@ -46,7 +46,7 @@ const Home = () => {
 
 	const movies = nowPlaying.slice(0, 5).map((item, index) => {
 		return (
-			<div key={index} style={{ width: 1000, height: 700 }}>
+			<div key={index}>
 				<div className="carousel-center">
 					<img src={item.backPoster} alt={item.title} />
 				</div>
@@ -60,7 +60,7 @@ const Home = () => {
 				</div>
 				<div
 					className="carousel-caption"
-					style={{ textAlign: "center", fontSize: 30 }}>
+					style={{ textAlign: "center", fontSize: 20 }}>
 					{item.title}
 				</div>
 			</div>
@@ -172,15 +172,14 @@ const Home = () => {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		pauseOnVisisbility: true,
+		
 		nextArrow: <CustomNext />,
 		prevArrow: <CustomPrev />,
 	};
 	return (
 		<main className="main">
-				<div className="row">
-					<div className="movie-slider">
-						<Slider {...settings}>{movies}</Slider>
-					</div>
+				<div className="movie-slider">
+					<Slider {...settings}>{movies}</Slider>
 				</div>
 
 				<div>
