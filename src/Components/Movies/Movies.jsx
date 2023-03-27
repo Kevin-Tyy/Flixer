@@ -124,7 +124,7 @@ const Movies = () => {
 	return (
 		<>
 			{loading ? (
-				<div className="App">
+				<div className="App-main">
 					<div className="margin"></div>
 
 					{movies.length ? (
@@ -153,7 +153,7 @@ const Movies = () => {
 											}}
 										/>
 
-										<button type="submit">
+										<button type="submit" className="input-button">
 											Search
 										</button>
 									</form>
@@ -164,6 +164,9 @@ const Movies = () => {
 								style={{
 									backgroundImage: `url("${IMAGE_PATH}${selectedMovie.backdrop_path} ")`,
 								}}>
+									<div className="poster">
+										<img src={`${IMAGE_PATH}${selectedMovie.backdrop_path}`} alt={selectedMovie.title}/>
+									</div>
 								<div className="hero-content ">
 									{playTrailer ? (
 										<button

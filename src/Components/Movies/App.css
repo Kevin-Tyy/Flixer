@@ -2,10 +2,14 @@ body {
 	background-color: #080808;
 	color: white;
 	font-family: cursive;
-	
-
 }
-.margin{
+.App-main {
+	margin: auto;
+	width: 90%;
+	display: flex;
+	justify-content: center;
+}
+.margin {
 	margin-bottom: 80px;
 }
 .container {
@@ -17,7 +21,6 @@ body {
 	margin: 30px auto;
 	grid-template-columns: repeat(5, 1fr);
 	gap: 10px;
-	
 }
 .movie-cover {
 	width: 100%;
@@ -25,7 +28,6 @@ body {
 	cursor: pointer;
 	transition: 0.5s;
 }
-
 
 .movie-placeholder {
 	background-color: #fff;
@@ -48,16 +50,14 @@ body {
 	display: flex;
 	align-items: flex-end;
 	border-radius: 30px;
-
 }
 
 .hero h1 {
 	font-size: 30px;
 	margin: 0;
 	color: rgb(95, 95, 95);
-	
 }
-.hero p{
+.hero p {
 	color: rgb(255, 255, 255);
 }
 .button {
@@ -76,7 +76,7 @@ body {
 	font-size: 1rem;
 	margin: 20px;
 	font-family: cursive;
-    transition: 0.1s;
+	transition: 0.1s;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
@@ -117,7 +117,8 @@ body {
 	font-family: cursive;
 }
 
-.header-content{
+.header-content {
+	margin-top: 80px;
 	display: flex;
 	justify-content: space-between;
 	text-align: center;
@@ -133,8 +134,8 @@ body {
 	outline: none;
 	color: white;
 	border-radius: 15px;
-    font-size: 1.1rem;
-    font-family: cursive;
+	font-size: 1.1rem;
+	font-family: cursive;
 }
 .header-content input:focus {
 	outline: none;
@@ -160,7 +161,6 @@ body {
 
 .header-content button:active {
 	transform: scale(0.99);
-
 }
 .header-content h1 {
 	font-size: 35px;
@@ -168,43 +168,45 @@ body {
 	font-family: cursive;
 }
 .header-content h1 > span {
-	color: purple;
+	color: rgb(63, 0, 158);
 }
-.input-icon{
+.input-icon {
 	color: grey;
 	font-size: 15px;
 	transform: translate(28px, 0);
 }
-.image-container{
+.image-container {
 	width: 100%;
 	height: 100%;
 	overflow-x: hidden;
 	overflow-y: hidden;
 }
-.movie-card{
+.movie-card {
 	width: 100%;
-	min-width: 250px;
-	height: 400px;
+	height: auto;
 	margin-bottom: 50px;
 }
-.movie-card img{
+.movie-card img {
 	transition: 0.5s;
-
 }
-.movie-card img:hover{	
-	transform: scale(1.13) ;
+.movie-card img:hover {
+	transform: scale(1.13);
 }
-.nomovie{
+.nomovie {
 	background-color: black;
 	color: white;
 	width: 100%;
 	height: 100%;
 	text-align: center;
 }
-.nomovie h2{
+.nomovie h2 {
 	color: transparent;
 	background-clip: text;
-	background: linear-gradient(to right, rgb(6, 100, 203)0%, rgb(53, 0, 78)70%);
+	background: linear-gradient(
+		to right,
+		rgb(6, 100, 203) 0%,
+		rgb(53, 0, 78) 70%
+	);
 	text-shadow: 2px 2px 20px rgb(60, 0, 128);
 	font-size: 25px;
 	margin-top: 30px;
@@ -213,74 +215,76 @@ body {
 	-webkit-text-fill-color: transparent;
 	-webkit-font-smoothing: antialiased;
 }
-.nomovie .icons{
+.nomovie .icons {
 	margin-top: 30px;
 }
-.message{
+.message {
 	font-family: cursive;
 	text-align: center;
 	margin: 100px auto;
 	margin-bottom: 70vh;
-	background: linear-gradient(to right, rgb(100, 0, 200)0%, rgb(78, 7, 200)50%);
+	background: linear-gradient(
+		to right,
+		rgb(100, 0, 200) 0%,
+		rgb(78, 7, 200) 50%
+	);
 	text-shadow: 2px 2px 40px rgb(40, 47, 200);
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	font-size: x-large;
 }
 
-.main{
+.main {
 	width: 90%;
 }
-.Play .icon{
+.Play .icon {
 	font-size: 140px;
 	color: rgb(60, 11, 200);
-
 }
-@media only screen and (max-width : 1400px){
-	.container{
+
+@media only screen and (max-width: 1600px) {
+	.container {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 	}
-
-}
-@media only screen and (max-width : 1200px){
-	.container{
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-	}
-	.hero{
-		min-height: none !important;
+	.hero {
 		height: 550px;
 	}
 }
-@media only screen and (max-width : 900px){
-	.container{
+@media only screen and (max-width: 1200px) {
+	.container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+@media only screen and (max-width: 900px) {
+	.container {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
+		margin: 0;
 	}
-	.movie-card{
+	.movie-card {
 		min-width: none;
 	}
-	.hero{
-		border-radius: 10px;
-		min-height: none !important;
-		height: 450px;
+	.hero {
+		height: 500px;
 	}
-	.header-content h1, .overview {
+
+	.header-content h1,
+	.overview {
 		display: none;
 	}
-	.header-content{
+	.header-content {
 		justify-content: center;
 	}
-	.header-content input{
+	.header-content input {
 		width: 380px;
-		
 	}
-	.hero-content{
+	.hero-content {
 		display: grid;
 		grid-template-columns: repeat(1, 1fr);
 	}
-	.hero .button{
+	.hero .button {
 		width: 180px;
 		height: 45px;
 		font-size: 10px;
@@ -290,34 +294,48 @@ body {
 	}
 }
 
-@media only screen and (max-width : 500px){
-	.container{
+@media only screen and (max-width: 500px) {
+	.container {
 		display: grid;
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr 1fr;
 		margin: 0;
+		padding: 10px 0 0 0;
 	}
-	.movie-card{
-		width: 100%;
-		margin:  0 auto 30px;
+	
+	.movie-card {
+		width: 70%;
+		min-width: 165px;
+		margin: 0 auto 30px;
+	}
+	.hero-content{
+		padding: 0;
 	}
 
-	.hero{
-		min-height: none !important;
-		height: 300px;
-		width: 100%;
+	.hero {
+		width: 350px;
+		height: 400px;
 		margin: 0;
-
+		border-radius: 5px;
 	}
-	.icons{
+	.icons {
 		font-size: 0px;
 	}
-	.header-content input{
-		width: 100%;
+	.header-content input {
+		width: 350px;
 		margin: 0;
 	}
-	.main{
+	.App-main {
 		margin: 0;
 	}
-	
-	
+	.input-icon{
+		position: relative;
+		top: 33px;
+		right: 52%;
+	}
+	.input-button{
+		position: relative;
+		bottom: 40px;
+		left: 123px;
+		height: 36px;
+	}
 }

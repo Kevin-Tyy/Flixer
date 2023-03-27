@@ -38,6 +38,7 @@ const Home = () => {
 		};
 		document.title = "Flick Flair | Home"
 		fetchAPI();
+		
 	}, []);
 
 	const handleGenreClick = async (genre_id) => {
@@ -179,7 +180,7 @@ const Home = () => {
 		
 	};
 	return (
-		<main className="main">
+		<div className="main">
 				<div className="movie-slider">
 					<Slider {...settings}>{movies}</Slider>
 				</div>
@@ -202,7 +203,7 @@ const Home = () => {
 					</h2>
 				</div>
 				<div className=" container-movie">{topRatedMovies}</div>
-		</main>
+		</div>
 	);
 };
 

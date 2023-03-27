@@ -2,12 +2,14 @@
 	margin: 0;
 	padding: 0;
 }
+
 .main{
-	width: 100%;
-	margin: 0;
+	width: 85%;
+	margin: 0 auto;
 }
 .carousel-center {
 	margin-top: 100px;
+	
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -17,7 +19,7 @@
 	max-width: 1400px;
 	max-height: 600px;
 	object-fit: cover;
-	border-radius: 40px;
+	border-radius: 20px;
 
 }
 
@@ -72,7 +74,7 @@
   color: #5a606b;
   margin: 7px 5px  ;
   padding: 10px 20px;
-  border-radius: 50px;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.1s ease-out;
 }
@@ -89,14 +91,16 @@
 	overflow: hidden;
 	height: 340px;
 	width: 100%;
-	min-width: 230px;
-	min-height: 340px;
+	min-width: 200px;
 	position: relative;
 }
 
 .card img{
 	width: 100%;
+	object-fit: cover;
 	height: 340px;
+	min-width: 120px;
+	max-width: 100%;
 }
 .card .img-container {
 	border-radius: 20px;
@@ -127,7 +131,7 @@
 }
 .actors-card img{
 	max-width: 200px;
-	min-width: 135px;
+	min-width: 120px;
 	width: 90%;
 	height: 55%;
 	max-height: 300px;
@@ -194,10 +198,10 @@
 	  );
 }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1100px) {
 	.main{
 		width: 900px;
-		margin-left: 20px;
+		margin-left: 120px;
 	}
 	.movie-slider{
 		width: 700px;
@@ -207,22 +211,67 @@
 		grid-template-columns: repeat(3, 1fr);
 		width: 40%;
 	}
+	.genre_list li>button{
+		margin: 3px 1px  ;
+		padding: 7px 15px;
+	}
+	.movie-slider{
+		width: 700px;
+	}
 
 }
-@media only screen and (max-width:600px){
+@media only screen and (max-width:900px){
 	.main{
-		width: 500px;
+		width: 700px;
+		margin-left: 80px;
 	}
-	.actors-list{
+	.container-movie{
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		margin: 10px;
+		margin-left: 60px;
 	}
 	.card{
-		width: 300px;
+		width: 250px;
 		max-width: none;
 	}
 	.movie-slider{
-		width: 400px;
+		width: 700px;
+	}
+}
+@media screen and (max-width : 700px) {
+	.main{
+		margin: 0;
+	}
+	.container-movie{
+		margin-left: 100px;
+	}
+	.movie-slider{
+		width: 570px;
+	}
+}
+@media only screen and (max-width:600px){
+	.actors-list{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		margin: 0;
+	}
+	.container-movie{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		margin: 0;
+	}
+	.card{
+		width: 120px;
+	}
+
+	.genre_list{
+		margin: 0;
+	}
+	.movie-slider{
+		width: 350px;
+		margin-left: 10px;
+	}
+	.icons{
+		font-size: 20px;
 	}
 }
