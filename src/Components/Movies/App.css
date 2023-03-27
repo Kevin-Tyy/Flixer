@@ -306,6 +306,9 @@ body {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 	}
+	.poster-desc p{
+		line-height: 2;
+	}
 }
 @media only screen and (max-width: 900px) {
 	.container {
@@ -345,7 +348,7 @@ body {
 	}
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
 	.container {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -405,11 +408,12 @@ body {
 		border-radius: 10px;
 	}
 	.poster{
-		padding: 5px;
+		padding: 5px;	
 	}
 	.poster-desc{
 		margin-left: 20px;
 	}
+
 	
 	.button{
 		margin: 5px;
