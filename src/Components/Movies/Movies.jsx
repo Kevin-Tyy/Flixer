@@ -164,8 +164,7 @@ const Movies = () => {
 								className="hero"
 								style={{
 									backgroundImage: `url("${IMAGE_PATH}${selectedMovie.backdrop_path} ")`,
-									backgroundSize: '150%'
-									
+									backgroundSize: "150%",
 								}}>
 								<div className="hero-content ">
 									{playTrailer ? (
@@ -256,8 +255,8 @@ const Movies = () => {
 															fontSize: 30,
 														}}
 													/>
-													&nbsp;
-													Watch Movie
+													&nbsp; Watch
+													Movie
 												</button>
 											</div>
 										</div>
