@@ -1,7 +1,6 @@
 body {
-	background-color: #080808;
+	background-color: #000000;
 	color: white;
-	font-family: cursive;
 }
 .App-main {
 	margin: auto;
@@ -13,7 +12,7 @@ body {
 	margin-bottom: 80px;
 }
 .container {
-	background-color: #080808;
+	background-color: #000000;
 	padding: 25px;
 	display: grid;
 	gap: 15px;
@@ -131,7 +130,7 @@ body {
 	width: 400px;
 	margin-right: -100px;
 	font-size: 12px;
-	background-color: #080808;
+	background-color: #000000;
 	border: 1px solid rgb(63, 63, 63);
 	outline: none;
 	color: white;
