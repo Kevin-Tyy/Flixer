@@ -5,8 +5,7 @@ const API_KEY = "a96ad25cf6347c7de13c995a2c2f4c2d";
 
 const nowPlayingURL = `${API_URL}/movie/now_playing`;
 const topRatedURL = `${API_URL}/movie/top_rated`;
-const movieURL = `${API_URL}/movie`;
-const genreURL = `${API_URL}/genre/movie/list`;
+const genreURL = `${API_URL}/genre/movie/list`;	
 const moviesURL = `${API_URL}/discover/movie`;
 const personURL = `${API_URL}/trending/person/week`;
 
@@ -132,23 +131,4 @@ export const fetchTopRatedMovie = async () => {
 
 };
 
-export const fetchCasts = () => {};
 
-export const fetchSimilarMovies = () => {};
-
-export const fetchMovieDetail = (id) => {
-  try {
-    const {data} = axios.get(`${movieURL}/${id}`, {
-      params : {
-        api_key : API_KEY,
-        language : "en-US",
-        page : 1
-      }
-    })
-    return data
-  } catch (error) {
-    
-  }
-};
-
-export const fetchMovieVideos = () => {};
