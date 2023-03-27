@@ -20,6 +20,7 @@ import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
 
 import ReactStars from "react-rating-stars-component";
 import { Link } from "react-router-dom";
+import { TailSpin } from "react-loader-spinner";
 
 const Home = () => {
 	const [nowPlaying, setNowPlaying] = useState([]);
@@ -27,18 +28,25 @@ const Home = () => {
 	const [movieByGenre, setMovieByGenre] = useState([]);
 	const [persons, setPersons] = useState([]);
 	const [topRated, setTopRated] = useState([]);
+	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		const fetchAPI = async () => {
-			setNowPlaying(await fetchMovies());
-			setGenres(await fetchGenre());
-			setMovieByGenre(await fetchMovieByGenre(28));
-			setPersons(await fetchPersons());
-			setTopRated(await fetchTopRatedMovie());
+			setLoading(true);
+			try {
+				setNowPlaying(await fetchMovies());
+				setGenres(await fetchGenre());
+				setMovieByGenre(await fetchMovieByGenre(28));
+				setPersons(await fetchPersons());
+				setTopRated(await fetchTopRatedMovie());
+			} catch (error) {
+				console.log(error);
+			}
+			setLoading(false);
 		};
-		document.title = "Flick Flair | Home"
+		document.title = "Flick Flair | Home";
 		fetchAPI();
-		
+		setLoading(true);
 	}, []);
 
 	const handleGenreClick = async (genre_id) => {
@@ -47,6 +55,7 @@ const Home = () => {
 
 	const movies = nowPlaying.slice(0, 5).map((item, index) => {
 		return (
+			
 			<div key={index}>
 				<div className="carousel-center">
 					<img src={item.backPoster} alt={item.title} />
@@ -61,7 +70,10 @@ const Home = () => {
 				</div>
 				<div
 					className="carousel-caption"
-					style={{ textAlign: "center", fontSize: 20 }}>
+					style={{
+						textAlign: "center",
+						fontSize: 20,
+					}}>
 					{item.title}
 				</div>
 			</div>
@@ -106,7 +118,7 @@ const Home = () => {
 		);
 	});
 
-	const trendingActors = persons.slice(4,10).map((person, index) => {
+	const trendingActors = persons.slice(4, 10).map((person, index) => {
 		return (
 			<div className="actors-card" key={index}>
 				<img src={person.profileImg} alt={person.name} />
@@ -123,7 +135,6 @@ const Home = () => {
 					<div className="img-container">
 						<img src={movie.poster} alt={movie.title} />
 						<div className="overlay"></div>
-
 					</div>
 				</div>
 				<div className="description">
@@ -172,38 +183,59 @@ const Home = () => {
 		autoplay: true,
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		width: '80',
+		width: "80",
 		pauseOnVisisbility: true,
 		nextArrow: <CustomNext />,
 		prevArrow: <CustomPrev />,
-		
-		
 	};
 	return (
-		<div className="main">
-				<div className="movie-slider">
-					<Slider {...settings}>{movies}</Slider>
-				</div>
+		<>
+			{!loading ? (
+				<div className="main">
+					<div className="movie-slider">
+						<Slider {...settings}>{movies}</Slider>
+					</div>
 
-				<div>
-					<ul className="genre_list">{genreList}</ul>
-				</div>
-				<h2 className="header-text">Trending Movies this week</h2>
-
-				<div className=" container-movie">{movieList}</div>
-				<div className="container-actors">
-					<h2 style={{ fontWeight: 700, color: "#5a606b" }}>
-						Trending Actors this Week
-					</h2>
-					<div className="actors-list">{trendingActors}</div>
-				</div>
-				<div className="toprated">
+					<div>
+						<ul className="genre_list">{genreList}</ul>
+					</div>
 					<h2 className="header-text">
-						Top Rated Movies this Week
+						Trending Movies this week
 					</h2>
+
+					<div className=" container-movie">{movieList}</div>
+					<div className="container-actors">
+						<h2 style={{ fontWeight: 700, color: "#5a606b" }}>
+							Trending Actors this Week
+						</h2>
+						<div className="actors-list">
+							{trendingActors}
+						</div>
+					</div>
+					<div className="toprated">
+						<h2 className="header-text">
+							Top Rated Movies this Week
+						</h2>
+					</div>
+					<div className=" container-movie">
+						{topRatedMovies}
+					</div>
 				</div>
-				<div className=" container-movie">{topRatedMovies}</div>
-		</div>
+			) : (
+				<div className="spinner">
+					<TailSpin
+						height="80"
+						width="80"
+						color="#4000cb"
+						ariaLabel="tail-spin-loading"
+						radius="1"
+						wrapperStyle={{}}
+						wrapperClass=""
+						visible={true}
+					/>
+				</div>
+			)}
+		</>
 	);
 };
 

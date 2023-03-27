@@ -119,8 +119,7 @@ const Movies = () => {
 			);
 		}
 	};
-
-
+	const movieGenres = selectedMovie.genres;
 	return (
 		<>
 			{loading ? (
@@ -153,7 +152,9 @@ const Movies = () => {
 											}}
 										/>
 
-										<button type="submit" className="input-button">
+										<button
+											type="submit"
+											className="input-button">
 											Search
 										</button>
 									</form>
@@ -163,10 +164,9 @@ const Movies = () => {
 								className="hero"
 								style={{
 									backgroundImage: `url("${IMAGE_PATH}${selectedMovie.backdrop_path} ")`,
+									backgroundSize: '150%'
+									
 								}}>
-									<div className="poster">
-										<img src={`${IMAGE_PATH}${selectedMovie.backdrop_path}`} alt={selectedMovie.title}/>
-									</div>
 								<div className="hero-content ">
 									{playTrailer ? (
 										<button
@@ -187,29 +187,81 @@ const Movies = () => {
 										? renderTrailer()
 										: null}
 
-									<div>
-										<h1>{selectedMovie.title}</h1>
-
-										{selectedMovie.overview ? (
-											<p className="overview">
+									<div className="poster">
+										<img
+											src={`${IMAGE_PATH}${selectedMovie.poster_path}`}
+											alt={selectedMovie.title}
+										/>
+										<div className="poster-desc">
+											<h1>
 												{
-													selectedMovie.overview
+													selectedMovie.title
 												}
-											</p>
-										) : null}
-									</div>
+											</h1>
 
-									<button
-										className="button"
-										onClick={() =>
-											setPlayTrailer(true)
-										}>
-										<FontAwesomeIcon
-											icon={faPlayCircle}
-											style={{ fontSize: 30 }}
-										/>{" "}
-										&nbsp; Play Trailer
-									</button>
+											{selectedMovie.overview ? (
+												<p className="overview">
+													{
+														selectedMovie.overview
+													}
+												</p>
+											) : null}
+											<div className="genre-btns">
+												{movieGenres
+													? movieGenres.map(
+															(
+																genre
+															) => (
+																<button>
+																	{
+																		genre.name
+																	}
+																</button>
+															)
+													  )
+													: null}
+											</div>
+											<div className="play-btns">
+												<button
+													className="button"
+													onClick={() =>
+														setPlayTrailer(
+															true
+														)
+													}>
+													<FontAwesomeIcon
+														icon={
+															faPlayCircle
+														}
+														style={{
+															fontSize: 30,
+														}}
+													/>
+													&nbsp; Play
+													Trailer
+												</button>
+
+												<button
+													className="button watch"
+													onClick={() =>
+														setPlayTrailer(
+															true
+														)
+													}>
+													<FontAwesomeIcon
+														icon={
+															faPlayCircle
+														}
+														style={{
+															fontSize: 30,
+														}}
+													/>
+													&nbsp;
+													Watch Movie
+												</button>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 

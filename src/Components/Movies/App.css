@@ -55,7 +55,7 @@ body {
 .hero h1 {
 	font-size: 30px;
 	margin: 0;
-	color: rgb(95, 95, 95);
+	color: rgb(255, 255, 255);
 }
 .hero p {
 	color: rgb(255, 255, 255);
@@ -68,13 +68,15 @@ body {
 	);
 	color: white;
 	border: none;
-	width: 200px;
-	height: 60px;
-	padding: 13px 35px;
-	border-radius: 10px;
+	width: 45%;
+	max-width: 170px;
+	min-width: 120px;
+	height: 50px;
+	padding: 13px 30px;
+	border-radius: 7px;
 	cursor: pointer;
-	font-size: 1rem;
-	margin: 20px;
+	font-size:10px;
+	margin: 20px 5px;
 	font-family: cursive;
 	transition: 0.1s;
 	display: flex;
@@ -87,9 +89,8 @@ body {
 
 .hero-content {
 	margin: 0 50px;
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	column-gap: 100px;
+
+	column-gap: 10px;
 	width: 100%;
 	padding-bottom: 50px;
 }
@@ -101,6 +102,7 @@ body {
 	right: 0;
 	bottom: 0;
 	top: 0;
+	z-index: 9;
 }
 .button__close {
 	position: absolute;
@@ -241,6 +243,54 @@ body {
 	font-size: 140px;
 	color: rgb(60, 11, 200);
 }
+.poster{
+	width:100% ;
+	height: 100%;
+	position: absolute;
+	display: grid;
+	grid-template-columns: 3fr 4fr;
+	top	: 0;
+	left: 0;
+	border-radius: 20px;
+	padding: 30px;
+	backdrop-filter: blur(5px);
+
+}
+.poster img{
+	width: 70%;
+	height: 80%;
+	min-width: 200px;
+	max-width: 350px;
+	border-radius: 20px;
+	margin: auto;
+	object-fit: cover;
+}
+
+.poster-desc{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 60%;
+}
+.poster-desc p{
+	line-height: 3;
+	margin: 5px 0;
+}
+.genre-btns, .play-btns{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+.genre-btns  button{
+	background-color: rgb(255, 255, 255, 0.2);
+	border: none;
+	cursor: pointer;
+	width: 20%;
+	height: 35px;
+	border-radius: 5px;
+	margin: 5px;
+	color: #fff;
+}
 
 @media only screen and (max-width: 1600px) {
 	.container {
@@ -280,12 +330,13 @@ body {
 	.header-content input {
 		width: 380px;
 	}
-	.hero-content {
+	.hero-content , .poster{
 		display: grid;
 		grid-template-columns: repeat(1, 1fr);
 	}
+	
 	.hero .button {
-		width: 180px;
+		width: 150px;
 		height: 45px;
 		font-size: 10px;
 		padding: 0;
@@ -313,7 +364,7 @@ body {
 
 	.hero {
 		width: 350px;
-		height: 400px;
+		height: 350px;
 		margin: 0;
 		border-radius: 5px;
 	}
@@ -337,5 +388,29 @@ body {
 		bottom: 40px;
 		left: 123px;
 		height: 36px;
+	}
+	.watch{
+		display: none;
+	}
+	
+	.poster-desc h1{
+		font-size: 20px;
+	}
+	.genre-btns{
+		display: none;
+	}
+	.poster img{
+		width: 300px;
+		height: 200px;
+		border-radius: 10px;
+	}
+	.poster{
+		padding: 5px;
+	}
+	.poster-desc{
+		margin-left: 20px;
+	}
+	.button{
+		margin: 5px;
 	}
 }

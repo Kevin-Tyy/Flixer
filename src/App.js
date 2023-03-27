@@ -21,7 +21,7 @@ const App = () => {
 			<main>
 				<Navbar />
 				<div className="grid">
-					<div>
+					<div className="grid-sidebar">
 						<SideBar />
 
 					</div>
