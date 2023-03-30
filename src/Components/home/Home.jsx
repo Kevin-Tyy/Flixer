@@ -40,8 +40,7 @@ const Home = () => {
 				setPersons(await fetchPersons());
 				setTopRated(await fetchTopRatedMovie());
 			} catch (error) {
-				console.log(error);
-			}
+				}
 			setLoading(false);
 		};
 		document.title = "Flick Flair | Home";

@@ -5,6 +5,10 @@ import './Pages.css'
 const Community = () => {
   useEffect(()=>{
     document.title = "FLickFlair | Community"
+    window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
   }, [])
   return (
     <div className='pages'>

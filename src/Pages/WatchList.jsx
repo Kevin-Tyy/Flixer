@@ -5,6 +5,10 @@ import './Pages.css'
 const WatchList = () => {
   useEffect(()=>{
     document.title = "Flick Flair | Your Watchlist"
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
   }, [])
   return (
     <div className='pages'>

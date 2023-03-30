@@ -10,7 +10,7 @@ body {
 	color: white;
 	font-family: 'Poppins', sans-serif !important;
 	font-size: 10px;
-
+	overflow-x: hidden;
 }
 
 .grid{

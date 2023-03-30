@@ -23,6 +23,10 @@ function TVSeries() {
 			});
 
 		document.title = " Flick Flair | Series";
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
 	}, []);
 	const posterUrl = "https://image.tmdb.org/t/p/original";
 
@@ -37,6 +41,7 @@ function TVSeries() {
 						{series.map((serie) => (
 							<div key={serie.id} className="movie-card">
 								<div className="image-container">
+									
 									<img
 										src={
 											`${posterUrl}` +
@@ -47,22 +52,19 @@ function TVSeries() {
 								<div className="description">
 									<h2>{serie.name}</h2>
 									<p style={{ lineHeight: 3 }}>
-										<span
-											style={{
-												color: "purple",
-											}}>
+										<span>
 											First Release Date :{" "}
 										</span>
 										{serie.first_air_date}
 									</p>
-									<span style={{ color: "purple" }}>
+									<span>
 										Rating
 									</span>
 									<ReactStars
 										count={serie.rating}
 										size={20}
 										isHalf={true}
-										activeColor="yellow"
+										activeColor="orange"
 										color="grey"
 									/>
 								</div>

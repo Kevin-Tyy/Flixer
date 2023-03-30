@@ -7,7 +7,6 @@ import { TailSpin } from "react-loader-spinner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose, faFilm, faSearch } from "@fortawesome/free-solid-svg-icons";
 
-import { fetchGenre } from "../../services/index";
 import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
 const Movies = () => {
 	const [movies, setMovies] = useState([]);
@@ -37,13 +36,13 @@ const Movies = () => {
 	};
 
 	useEffect(() => {
-		const fetchAPI = async () => {
-			setGenres(await fetchGenre());
-		};
 
-		fetchAPI();
 		fetchMovies();
 		document.title = "Flick Flair | Watch Movies";
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
 	}, []);
 
 	const searchMovies = (e) => {
@@ -64,7 +63,6 @@ const Movies = () => {
 	const selectMovie = async (movie) => {
 		setPlayTrailer(false);
 		const data = await fetchMovie(movie.id);
-		console.log("movie data :", data);
 		setselectedMovie(data);
 		window.scrollTo({
 			top: 0,
@@ -211,7 +209,7 @@ const Movies = () => {
 															(
 																genre
 															) => (
-																<button>
+																<button style={{fontSize: 10}}>
 																	{
 																		genre.name
 																	}
@@ -273,6 +271,7 @@ const Movies = () => {
 									/>
 								))}
 							</div>
+							
 						</main>
 					) : (
 						<h1 className="message">

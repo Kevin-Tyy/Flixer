@@ -5,6 +5,10 @@ import './Pages.css'
 const Downloads = () => {
   useEffect(()=>{
     document.title = "Flick Flair | Downloads"
+    window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
   }, [])
   return (
     <div className='pages'>

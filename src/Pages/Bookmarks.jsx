@@ -4,6 +4,10 @@ import './Pages.css'
 const Bookmarks = () => {
   useEffect(()=>{
     document.title = "Flick Flair | Bookmarks"
+    window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
   }, [])
   return (
     <div className='pages'>

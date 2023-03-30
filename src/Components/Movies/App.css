@@ -183,8 +183,9 @@ body {
 	overflow-x: hidden;
 	overflow-y: hidden;
 }
-.movie-card {
+.container .movie-card {
 	width: 100%;
+	max-width: 290px;
 	height: auto;
 	margin-bottom: 50px;
 }

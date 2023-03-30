@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
-import ReactStars from "react-rating-stars-component";
+import "./Pages.css";
 import { TailSpin } from "react-loader-spinner";
-function TVShows() {
-	const [shows, setShows] = useState([]);
+const Coming = () => {
+	const [movies, setMovies] = useState([]);
 	const [loading, setLoading] = useState(false);
 	const API_KEY = "a96ad25cf6347c7de13c995a2c2f4c2d";
 
@@ -12,15 +13,19 @@ function TVShows() {
 			`https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}`
 		)
 			.then((response) => {
-				setShows(response.data.results);
+				setMovies(response.data.results);
 				setLoading(true);
-				console.log(shows);
 			})
 			.catch((error) => {
 				console.log(error);
 			});
-		document.title = "Flick Flair | Your Shows";
+		document.title = "Flick Flair | Coming Soon ";
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
 	}, []);
+
 	const posterUrl = "https://image.tmdb.org/t/p/original";
 
 	return (
@@ -28,40 +33,25 @@ function TVShows() {
 			{loading ? (
 				<div className="pages">
 					<h1 style={{ textAlign: "center" }}>
-						Famous TV Shows
+						Up Coming Movies
 					</h1>
-					<div className="pages-container shows">
-						{shows.map((show) => (
-							<div key={show.id} className="movie-card">
+					<div className="pages-container upcoming">
+						{movies.map((movie) => (
+							<div key={movie.id} className="movie-card">
 								<div className="image-container">
 									<img
 										src={
 											`${posterUrl}` +
-											show.poster_path
+											movie.backdrop_path
 										}
+										alt=""
 									/>
 								</div>
-								<h3
-									style={{
-										fontSize: 17,
-										textAlign: "center",
-										margin: 10,
-									}}>
-									{show.title}
-								</h3>
-								<p style={{ lineHeight: 2.5 }}>
-									{show.overview}
+								<h3 style={{marginBottom:10}}>{movie.title}</h3>
+								<p>
+									<span>Release Date : </span>
+									{movie.release_date}
 								</p>
-								<span style={{ color: "purple" }}>
-									Rating
-								</span>
-								<ReactStars
-									count={show.rating}
-									size={20}
-									isHalf={true}
-									activeColor="yellow"
-									color="grey"
-								/>
 							</div>
 						))}
 					</div>
@@ -82,6 +72,6 @@ function TVShows() {
 			)}
 		</>
 	);
-}
+};
 
-export default TVShows;
+export default Coming;
