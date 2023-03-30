@@ -2,18 +2,18 @@ import React from "react";
 import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./Components/Footer/Footer";
-import Home from "./Components/Home/Home.jsx";
-import Movies from "./Components/Movies/Movies.jsx";
-import Navbar from "./Components/Navbar/Navbar.jsx";
-import Bookmarks from "./Pages/Bookmarks.jsx";
-import Coming from "./Pages/Coming.jsx";
-import Community from "./Pages/Community.jsx";
-import Downloads from "./Pages/Downloads.jsx";
-import WatchList from "./Pages/WatchList.jsx";
-import SideBar from "./Components/Sidebar/SideBar.jsx";
-import Shows from "./Pages/Shows.jsx";
-import Series from "./Pages/Series.jsx";
-import Page404 from "./Pages/404.jsx";
+import Home from "./Components/Home/Home";
+import Movies from "./Components/Movies/Movies";
+import Navbar from "./Components/Navbar/Navbar";
+import Bookmarks from "./Pages/Bookmarks";
+import Coming from "./Pages/Coming";
+import Community from "./Pages/Community";
+import Downloads from "./Pages/Downloads";
+import WatchList from "./Pages/WatchList";
+import SideBar from "./Components/Sidebar/SideBar";
+import Shows from "./Pages/Shows";
+import Series from "./Pages/Series";
+import Page404 from "./Pages/404";
 const App = () => {
 	return (
 		<>
