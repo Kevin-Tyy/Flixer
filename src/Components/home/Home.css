@@ -16,7 +16,6 @@
 }
 .carousel-center img {
 	width: 100%;
-	max-width: 1400px;
 	max-height: 600px;
 	object-fit: cover;
 	border-radius: 20px;
@@ -236,6 +235,7 @@
 	}
 	.movie-slider{
 		width: 700px;
+		margin: auto;
 	}
 }
 @media screen and (max-width : 700px) {

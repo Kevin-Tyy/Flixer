@@ -133,6 +133,9 @@
         background-color: rgb(0, 0, 0);
 
     }
+    .text{
+        display: none;
+    }
 
     .sidebar .close-button{
         display: none;

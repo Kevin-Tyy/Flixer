@@ -32,6 +32,7 @@ body {
 	background-color: #fff;
 	color: rgb(70, 68, 68);
 	min-height: 358px;
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
