@@ -2,7 +2,7 @@ import React from "react";
 import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./Components/Footer/Footer";
-import Home from "./Components/Home/Home";
+import Home from "./Components/Home/Home.jsx";
 import Movies from "./Components/Movies/Movies";
 import Navbar from "./Components/Navbar/Navbar";
 import Bookmarks from "./Pages/Bookmarks";
