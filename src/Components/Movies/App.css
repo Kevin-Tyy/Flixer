@@ -265,6 +265,7 @@ body {
 	border-radius: 20px;
 	margin: auto;
 	object-fit: cover;
+	box-shadow: 0 20px 100px #000;
 }
 
 .poster-desc{
