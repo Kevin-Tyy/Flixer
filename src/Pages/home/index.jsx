@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import Navbar from '../../components/Header/Navbar'
 
 const Home = () => {
+  useEffect(() => {
+    document.title = 'Home | Netflix'
+  }, [])
   return (
-    <div>Home</div>
+    <div>
+      <Navbar/> 
+      <main>
+        <section>
+          
+        </section>
+      </main>
+    </div>
   )
 }
 
